@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 28 32">
+    <path data-name="사각형 7850" transform="translate(7 1)" style="fill:#8c5ce9" d="M0 0h14v7H0z"/>
+    <path data-name="사각형 7851" transform="translate(11.5 1)" style="fill:#fff" d="M0 0h5v7H0z"/>
+    <g data-name="타원 1638" transform="translate(1 5)" style="fill:#ffaf6c;stroke:#f18d3a;stroke-width:4px">
+        <circle cx="13" cy="13" r="13" style="stroke:none"/>
+        <circle cx="13" cy="13" r="11" style="fill:none"/>
+    </g>
+    <path data-name="교차 13" d="M17466 12468a13 13 0 0 1 21.68-9.682l-18.357 18.358a12.944 12.944 0 0 1-3.323-8.676z" transform="translate(-17465 -12450)" style="opacity:.7;mix-blend-mode:overlay;isolation:isolate;fill:#ffaa63"/>
+    <text data-name="3" transform="translate(18 22.5)" style="fill:#813c00;font-size:14px;font-family:Roboto-Bold,Roboto;font-weight:700"><tspan x="-8.032" y="0">3</tspan></text>
+    <path data-name="사각형 7854" transform="translate(6 1)" style="fill:#ffaa63" d="M0 0h16v1.5H0z"/>
+</svg>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울자전거 따릉이 - 무인대여시스템</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel="apple-touch-icon=precomposed" href="./images/logo.png">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./css/display_none_scrollbar.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./css/jquery.bxslider.css">
+    <link rel="stylesheet" href="./css/bike.css">
+    <!-- JS 플러그인 파일 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 페이지 관련 JS -->
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=735ee8faf4d42ccfe451b9b2acc5bb3d&autoload=false"></script>
+    <script src="./js/jquery.bxslider.js"></script>
+    <script src="./js/bike.js"></script>
+    <script>
+        $(function(){
+            // header 페이지 추가
+            $('header').load('./includes/header.html');
+            // footer 페이지 추가
+            $('footer').load('./includes/footer.html');
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <hr class="line">
+
+        <!-- Contents -->
+        <main>
+            <!-- section 1 -->
+            <section class="container w1560">
+                <article class="text_section line_font">
+                    <div class="textarea">
+                        <h2>
+                            <span>서울</span>을 즐기다
+                        </h2>
+                        <h3>
+                            누구나 쉽고 편리하게<br>
+                            이용할 수 있는 저탄소 이동수단&nbsp;<img src="./images/index/left_txt01.png" alt="지구 이미지"><br>
+                            서울자전거&nbsp;<span>따릉이</span>&nbsp;<img src="./images/index/left_txt02.png" alt="자전거 이미지">
+                        </h3>
+                    </div>
+                    <div class="map">
+                        <p>대여소 조회</p>
+                        <div id="map"></div>
+                    </div>
+                </article>
+                <!-- 슬라이드 이미지 -->
+                <article class="slide_img">
+                    <!-- BxSlider 이미지 -->
+                    <ul class="slide_gallery">
+                        <li><img src="./images/index/main_visual1.png" alt="슬라이드01"></li>
+                        <li><img src="./images/index/main_visual2.png" alt="슬라이드02"></li>
+                        <li><img src="./images/index/main_visual3.png" alt="슬라이드03"></li>
+                        <li><img src="./images/index/main_visual4.png" alt="슬라이드04"></li>
+                    </ul>
+                    <!-- /BxSlider 이미지 -->
+                </article>
+            </section>
+            <!-- /section 1 -->
+            
+            <!-- section 2 -->
+            <section class="info_section">
+                <div class="guide_bar">
+                    <div></div>
+                    <div></div>
+                </div>
+                <h2 class="line_font"><span>이용</span>안내</h2>
+                <article>
+                    <div class="info_banner line_font">
+                        <div class="on" data-target="use">이용방법</div>
+                        <div data-target="return">반납방법</div>
+                    </div>
+                    <div>
+                        <ul class="info_img" id="use">
+                            <li>
+                                <img src="./images/index/guide/utilization_01.png" alt="이용안내 이미지1">
+                                <h3 class="line_font">STEP 01</h3>
+                                <h4>
+                                    '따릉이'앱에서 대여하기 버튼을 누른 후,<br>
+                                    자전거 뒤쪽의 QR코드를 스캔해주세요.
+                                </h4>
+                            </li>
+                            <li>
+                                <img src="./images/index/guide/utilization_02.png" alt="이용안내 이미지1">
+                                <h3 class="line_font">STEP 02</h3>
+                                <h4>
+                                    대여 시작 메세지와 함께<br>
+                                    자전거의 잠금이 해제돼요.
+                                </h4>
+                            </li>
+                            <li>
+                                <img src="./images/index/guide/utilization_03.png" alt="이용안내 이미지1">
+                                <h3 class="line_font">STEP 03</h3>
+                                <h4>
+                                    즐거운 자전거 운행!<br>
+                                    안전운행 하세요.   
+                                </h4>
+                            </li>
+                            <li>
+                                <img src="./images/index/guide/utilization_04.png" alt="이용안내 이미지1">
+                                <h3 class="line_font">잠깐 자전거를 세워두고 싶나요?</h3>
+                                <h4>
+                                    잠깐 자전거를 세워두고 싶은 경우,<br>
+                                    자전거의 잠금 장치를 잠가주세요.<br>
+                                    다시 이용하고 싶을 때 앱에서 자가 잠금 해제 버튼을 누를 경우,<br>
+                                    다시 이용할 수 있어요.
+                                </h4>
+                            </li>
+                        </ul>
+                        <ul class="info_img" id="return">
+                            <li>
+                                <img src="./images/index/guide/Return_01.png" alt="반납안내 이미지1">
+                                <h3 class="line_font">STEP 01</h3>
+                                <h4>
+                                    가까운 "따릉이 대여소"를 찾아주세요.
+                                </h4>
+                            </li>
+                            <li>
+                                <img src="./images/index/guide/Return_02.png" alt="반납안내 이미지2">
+                                <h3 class="line_font">STEP 02</h3>
+                                <h4>
+                                    자전거 뒷 부분에 있는<br>
+                                    잠금장치를 잠근 후 잠시만 기다려주세요.
+                                </h4>
+                            </li>
+                            <li>
+                                <img src="./images/index/guide/Return_03.png" alt="반납안내 이미지3">
+                                <h3 class="line_font">STEP 03</h3>
+                                <h4>
+                                    전송된 반납완료 메시지(알림톡, 휴대폰문자)를<br>
+                                    "꼭" 확인하시고, 이동하여 주세요.  
+                                </h4>
+                            </li>
+                            <li>
+                                <img src="./images/index/guide/Return_04.png" alt="반납안내 이미지4">
+                                <h3 class="line_font">잠깐 자전거를 세워두고 싶나요?</h3>
+                                <h4>
+                                    잠깐 자전거를 세워두고 싶은 경우,<br>
+                                    자전거의 잠금 장치를 잠가주세요.<br>
+                                    다시 이용하고 싶을 때 앱에서 자가 잠금 해제 버튼을 누를 경우,<br>
+                                    다시 이용할 수 있어요.
+                                </h4>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="info_service">
+                    <div class="service">
+                        <h2 class="line_font">서비스 안내</h2>
+                        <p>
+                            따릉이 공영자전거시스템의<br>
+                            서비스를 안내해드립니다.
+                        </p>
+                    </div>
+                    <div class="use_info">
+                        <h2 class="line_font">이용안내</h2>
+                        <div>
+                            <table>
+                                <tr>
+                                    <th>대여/반납</th>
+                                    <td>
+                                        따릉이 대여소는<br>
+                                        24시간 동안 운영됩니다.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>이용대상</th>
+                                    <td> 
+                                        만 13세, 만 14세 이상<br>
+                                        자전거 주행이 가능한 자
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        ※따릉이는 만 12세 이하는 이용 불가,<br>
+                                        만 13세의 회원은 보호자 동의가 필요합니다.
+                                    </td>
+                                </tr>
+                            </table>
+                            <img src="./images/index/guide/clock_icon01.png" alt="시계">
+                        </div>
+                    </div>
+                    <div class="use_info">
+                        <h2 class="line_font">요금안내</h2>
+                        <div>
+                            <table>
+                                <tr>
+                                    <th>정기권</th>
+                                    <td>
+                                        정기권 7일권&nbsp;/&nbsp;30일권&nbsp;/&nbsp;180일권&nbsp;/&nbsp;365일권<br>
+                                        회원전용 권종별 금액 상이
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>일일권 </th>
+                                    <td>
+                                        1시간권&nbsp;-&nbsp;1,000원<br>
+                                        2시간권&nbsp;-&nbsp;2,000원
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        *기본대여시간을 초과하면<br>
+                                        5분마다 200원의 추가요금이 발생합니다.
+                                    </td>
+                                </tr>
+                            </table>
+                            <img src="./images/index/guide/clock_icon02.png" alt="시계">
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- /section 2 -->
+
+            <!-- section3 -->
+            <section class="map_info">
+                <h2 class="line_font">
+                    <span>시민이</span>&nbsp;추천<span>하고,</span><br>
+                    <span>시민이</span>&nbsp;투표<span>하고,</span><br>
+                    <span>시민이</span>&nbsp;달리는
+                </h2>
+                <article class="course">
+                    <div class="course_img">
+                        <img src="./images/index/course/seoul-map.png" alt="코스별 이미지1" id="mainMap">
+                        <div>
+                            <div class="course_info">
+                                <img src="./images/index/course/map-text.png" alt="텍스트 이미지">
+                                <img src="./images/index/course/map-line.png" alt="화살표 이미지">
+                            </div>
+                            <div>
+                                <button class="main_btn">전체 코스 보기</button>
+                                <div class="course_button">
+                                    <button class="cbtn cbtn1">1코스</button>
+                                    <button class="cbtn cbtn2">2코스</button>
+                                    <button class="cbtn cbtn3">3코스</button>
+                                    <button class="cbtn cbtn4">4코스</button>
+                                    <button class="cbtn cbtn5">5코스</button>
+                                    <button class="cbtn cbtn6">6코스</button>
+                                    <button class="cbtn cbtn7">7코스</button>
+                                    <button class="cbtn cbtn8">8코스</button>
+                                    <button class="cbtn cbtn9">9코스</button>
+                                    <button class="cbtn cbtn10">10코스</button>
+                                    <button class="cbtn cbtn11">11코스</button>
+                                    <button class="cbtn cbtn12">12코스</button>
+                                    <button class="cbtn cbtn13">13코스</button>
+                                    <button class="cbtn cbtn14">14코스</button>
+                                    <button class="cbtn cbtn15">15코스</button>
+                                    <button class="cbtn cbtn16">16코스</button>
+                                    <button class="cbtn cbtn17">17코스</button>
+                                    <button class="cbtn cbtn18">18코스</button>
+                                    <button class="cbtn cbtn19">19코스</button>
+                                    <button class="cbtn cbtn20">20코스</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- /section3 -->
+
+            <!-- section 4 -->
+            <section class="eco">
+                
+            </section>
+            <!-- section 4 -->
+        </main>
+        <!-- Contents -->
+        
+        <div id="sideWrap">
+            <section id="side">
+                <h3 class="arrbtn" id="toggleBtn">
+                    <span class="arrow-wrap">
+                        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                    </span>
+                    <p>따릉이앱 설치</p>
+                </h3>
+            </section>
+        </div>
+
+        <!-- 이미지 박스 -->
+        <div id="imageBox" class="hidden">
+            <img src="images/qr_banner.png" alt="따릉이 QR코드" />
+        </div>
+        
+        <!-- Footer -->
+        <footer></footer>
+        <!-- /Footer -->
+    </div>
+</body>
+</html>

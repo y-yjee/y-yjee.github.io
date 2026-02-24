@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이용권 구매</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel="apple-touch-icon=precomposed" href="./images/logo.png">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./css/display_none_scrollbar.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./css/bike.css">
+    <link rel="stylesheet" href="./css/ticket.css">
+    <!-- JS 플러그인 파일 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 페이지 관련 JS -->
+    <script src="./js/bike.js"></script>
+    <script>
+        $(function(){
+            // header 페이지 추가
+            $('header').load('./includes/header.html');
+            // footer 페이지 추가
+            $('footer').load('./includes/footer.html');
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <hr class="line">
+        
+        <main>
+            <section class="info_use">
+                <h2>이용권 구매</h2>
+                <div class="flex_box">
+                    <ul class="ticket">
+                        <li>
+                            <a href="#">
+                                <h3>정기권</h3>
+                                <p>1시간권, 2시간권을 선택하실 수 있습니다.</p>
+                                <img src="./images/ticket/menu_ticket1.png" alt="티켓 이미지">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h3>일일권</h3>
+                                <p>1시간권, 2시간권을 선택하실 수 있습니다.</p>
+                                <img src="./images/ticket/menu_ticket1.png" alt="티켓 이미지">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="gift">
+                        <li>
+                            <a href="#">
+                                <h3>선물하기</h3>
+                                <p>정기권을 선택하실 수 있습니다.</p>
+                                <img src="./images/ticket/menu_ticket4.png" alt="선물 이미지">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h3>선물하기</h3>
+                                <p>일일권을 선택하실 수 있습니다.</p>
+                                <img src="./images/ticket/menu_ticket4.png" alt="선물 이미지">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="etc">
+                        <li>
+                            <a href="#"><img src="./images/ticket/ic_nomember.png" alt="비회원아이콘">비회원 - 이용권 구매</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="./images/ticket/ic_foreigner.png" alt="외국인이용아이콘">외국인 - 이용권 구매</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+        </main>
+        <!-- Footer -->
+        <footer></footer>
+        <!-- /Footer -->
+    </div>
+</body>
+</html>

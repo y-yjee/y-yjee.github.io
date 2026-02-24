@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안전수칙</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel="apple-touch-icon=precomposed" href="./images/logo.png">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/display_none_scrollbar.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/jquery.bxslider.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./css/safety.css">
+    <!-- JS 플러그인 파일 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 페이지 관련 JS -->
+    <script src="./js/jquery.bxslider.js"></script>
+    <script>
+        $(function(){
+            // header 페이지 추가
+            $('header').load('./includes/header.html');
+            // footer 페이지 추가
+            $('footer').load('./includes/footer.html');
+        });
+       $(function () {
+            //  실제 슬라이드 개수만 계산 (clone 제외)
+            const totalSlides = $('.slide_gallery > li').length;
+            
+            //  bxSlider 초기화
+            const slider = $('.slide_gallery').bxSlider({
+                mode: 'horizontal',
+                slideWidth: 1030,
+                pager: true,
+                controls: false, // 자동 생성되는 화살표 비활성화
+                responsive: false,
+                touchEnabled: false,
+                speed: 500,
+                
+                //  슬라이드 로드 시 숫자 카운터 생성
+                onSliderLoad: function (currentIndex) {
+                    $('.slide_counter').remove(); // 중복 제거
+                    $('<div class="slide_counter"><span class="current">' + (currentIndex + 1) + '</span> / <span class="total">' + totalSlides + '</span></div>')
+                        .appendTo('.bx-wrapper')
+                        .css({
+                            position: 'absolute',
+                            top: '15px',
+                            right: '25px',
+                            fontSize: '14px',
+                            fontWeight: '600',
+                            color: '#333',
+                            zIndex: 1000
+                        });
+                },
+
+                //  더블클릭 방지를 위한 비활성 처리
+                onSlideBefore: function () {
+                    $('.bx-prev, .bx-next').addClass('disabled');
+                },
+
+                //  슬라이드 후 버튼 복구 및 페이지 수 업데이트
+                onSlideAfter: function ($el, oldIndex, newIndex) {
+                    $('.bx-prev, .bx-next').removeClass('disabled');
+                    $('.slide_counter .current').text(newIndex + 1);
+                }
+            });
+
+            //  좌우 버튼 커스텀 이벤트 - 더블클릭 방지 적용
+            $('.bx-prev').off('click').on('click', function (e) {
+                e.preventDefault();
+                if (!$(this).hasClass('disabled')) {
+                    slider.goToPrevSlide();
+                }
+            });
+
+            $('.bx-next').off('click').on('click', function (e) {
+                e.preventDefault();
+                if (!$(this).hasClass('disabled')) {
+                    slider.goToNextSlide();
+                }
+            });
+     });
+
+    // 미완성 페이지 알림창 효과
+    // $(document).ready(function () {
+    // $('body').append('<div class="alert"><img src="./images/alert.png" alt="준비중 알람창"></div>')
+    // $('a[href="#"]').click(function(e){
+    //     e.preventDefault();
+    //     $('.alert').stop().fadeIn(800); // alert 표시
+    //     setTimeout(function(){
+    //         $('.alert').stop().fadeOut(800);
+    //     },3000);
+    // })
+    // })
+    //
+     
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+            <!-- /Header -->
+        <hr class="line">
+        <main>
+            <section class="w1030">
+                <article class="title">
+                    <h2>안전하게 자전거 이용하기</h2>
+                </article>
+                <article id="gallery_wrap">
+                    <div class="slide_counter">1 / 7</div>
+                    <div class="flex-box">
+                        <div class="bx-wrapper">
+                            <ul class="slide_gallery">
+                                <li>
+                                    <div class="slide_inner">
+                                        <div class="text_box">
+                                            <h2>출발 전 점검</h2>
+                                            <p>이용 전 브레이크,타이어,체인,안장 조임을 꼭 확인하세요</p>
+                                        </div>
+                                        <div class="image_box">
+                                            <img src="./images/safety/g_pc_s1.png" alt="안전수칙1">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slide_inner">
+                                        <div class="text_box">
+                                            <h2>안전모 착용</h2>
+                                            <p>안전한 주행을 위해 주행시 안전모를 착용하세요.</p>
+                                        </div>
+                                        <div class="image_box">
+                                            <img src="./images/safety/g_pc_s2.png" alt="안전수칙2">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slide_inner">
+                                        <div class="text_box">
+                                            <h2>음주 운전 금지</h2>
+                                            <p>자전거도 차와 같이 교통법규를 지켜야 합니다.</p>
+                                            <p>음주 후 이용시 도로교통법에 따라 처벌받습니다.</p>
+                                        </div>
+                                        <div class="image_box">
+                                            <img src="./images/safety/g_pc_s3.png" alt="안전수칙3">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slide_inner">
+                                        <div class="text_box">
+                                            <h2>자전거도로 이용 </h2>
+                                            <p>자전거 도로를 이용하고,없는 경우 차도 우측 가장자리에</p>
+                                            <p>붙어서 통행합니다.이때 2대 이상 나란히 통행하지 않습니다.</p>
+                                        </div>
+                                        <div class="image_box">
+                                            <img src="./images/safety/g_pc_s4.png" alt="안전수칙4">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                   <div class="slide_inner">
+                                        <div class="text_box">
+                                            <h2>횡단보도 이용시</h2>
+                                            <p>횡단보도에서는 자전거를 끌고 보행해야 합니다.</p>
+                                        </div>
+                                        <div class="image_box">
+                                            <img src="./images/safety/g_pc_s5.png" alt="안전수칙5">
+                                        </div>
+                                   </div>
+                                </li>
+                                <li>
+                                   <div class="slide_inner">
+                                       <div class="text_box">
+                                            <h2>보행자 배려</h2>
+                                            <p>보행자의 통행에 방해가 될 경우 일시정지하고,</p>
+                                            <p>보행자 보호를 위해 과속하지 않습니다.</p>
+                                       </div>
+                                        <div class="image_box">
+                                            <img src="./images/safety/g_pc_s6.png" alt="안전수칙6">
+                                        </div>
+                                   </div>
+                                </li>
+                                <li>
+                                    <div class="slide_inner">
+                                        <div class="text_box">
+                                            <h2>주행중 기타행위 금지</h2>
+                                            <p>주행시 핸들을 놓거나 이어폰,핸드폰을 사용하지 않습니다.</p>
+                                        </div>
+                                        <div class="image_box">
+                                            <img src="./images/safety/g_pc_s7.png" alt="안전수칙7">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="bx-prev">◀</button>
+                            <button class="bx-next">▶</button>
+                        </div>
+                    </p>
+                    <div class="slide_counter">
+                        <span class="current">1</span> / <span class="total">7</span>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer></footer>
+        <!-- /Footer -->
+</body>
+</html>

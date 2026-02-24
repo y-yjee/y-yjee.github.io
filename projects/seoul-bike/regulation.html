@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울자전거 따릉이 - 무인대여시스템</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel="apple-touch-icon=precomposed" href="./images/logo.png">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/display_none_scrollbar.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./css/jquery.bxslider.css">
+    <link rel="stylesheet" href="./css/bike.css">
+    
+    <!-- JS 플러그인 파일 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 페이지 관련 JS -->
+    <script src="./js/jquery.bxslider.js"></script>
+    <script src="./js/bike.js"></script>
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=735ee8faf4d42ccfe451b9b2acc5bb3d&autoload=false"></script>
+    <script>
+      $(function(){
+            // header 페이지 추가
+            $('header').load('./includes/header.html');
+            // footer 페이지 추가
+            $('footer').load('./includes/footer.html');
+        });
+    </script>
+    <link rel="stylesheet" href="./css/regulation.css">
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <hr class="line">
+
+        <!-- Main -->
+        <main>
+          <section>
+            <h2>이용안내</h2>
+            <article>
+              <!-- Sub Menu -->
+              <ul class="sub_menu">
+                <li  class="on" data-target="map">따릉이 대여소</li>
+                <li data-target="use_info">따릉이 이용안내</li>
+                <li data-target="price">따릉이 요금안내</li>
+              </ul>
+              <!-- Sub Menu -->
+
+              <!-- 이용안내 탭 -->
+              <div id="use_info">
+                <ul>
+                  <li><a href="#">대중교통 환승 마일리지 서비스</a></li>
+                  <li><a href="#">이용권·추가요금 결제 안내</a></li>
+                  <li><a href="#">비회원/외국인관광객 이용절차</a></li>
+                  <li><a href="#">제로페이 이용방법</a></li>
+                </ul>
+                <p><a href="#">※ 이용권 사용안내/환불 규정 보기</a></p>
+                <p><a href="#">※ 자주찾는 질문 바로가기</a></p>
+              </div>
+              <!-- /이용안내 탭 -->
+              
+              <!-- 지도 -->
+              <div id="map" class="map_info"></div>
+              <!-- /지도 -->
+
+              <!-- 요금안내 탭 -->
+              <div id="price">
+                <div>
+                  <ul>
+                    <li>
+                      <span>· 첫 대여 후 대여시간(1시간/2시간)안에 정상 반납시 권종별 기간 동안은 대여횟수 제한없이 재대여 가능</span>
+                    </li>
+                    <li>
+                      · <b>이용시간</b>은 첫 회 대여시점을 기준으로 계산합니다.
+                    </li>
+                    <li>
+                      · 서울자전거 <b>모든 대여소에서 사용이 가능</b>합니다.
+                    </li>
+                    <li>
+                      · 취소, 환불은 서울자전거 아래 <b>환불규정</b>에 따릅니다.
+                    </li>
+                    <li>
+                      · 이용권을 다른 사람에게 <b>양도</b>할 수 없으며, 양도로 인해 발생하는 불이익은 구매자가 책임지셔야 합니다.
+                    </li>
+                  </ul>
+                </div>
+                <h3>상품안내</h3>
+                <table>
+                    <thead>
+                      <tr>
+                        <th>구분</th>
+                        <th colspan="3">정기권(회원전용)</th>
+                        <th colspan="2">일일권</th>
+                      </tr>
+                      <tr>
+                        <th rowspan="2">상품</th>
+                        <th>종별</th>
+                        <th>1시간권</th>
+                        <th>2시간권</th>
+                        <th>1시간권</th>
+                        <th>2시간권</th>
+                      </tr>
+                      <!-- 상품 -->
+                      <tr>
+                        <th>7일권<br>30일권<br>180일권<br>365일권</th>
+                        <th>3,000원<br>5,000원<br>15,000원<br>30,000원</th>
+                        <th>4,000원<br>7,000원<br>20,000원<br>40,000원</th>
+                        <th>1,000원</th>
+                        <th>2,000원</th>
+                      </tr>
+                    </thead>
+
+                    <!-- 결제 -->
+                    <tbody>
+                      <tr>
+                        <th>결제</th>
+                        <td colspan="5">휴대폰, 신용카드, PAYCO, 카카오페이, 제로페이, Discover Pass(외국인전용)</td>
+                      </tr>
+  
+                      <!-- 추가요금 -->
+                      <tr>
+                        <th>추가요금</th>
+                        <td colspan="5">
+                          - 1시간(2시간) 단위 반복 이용권은 1시간(2시간) 이내 대여 시 무료<br>
+                          - 미반납시 초과 5분당 200원씩 과금<br>
+                          - 자전거 대여 후 기준 대여 시간 초과 시 추가요금 부과<br>
+                          - 추가요금 미납 시 재대여 불가
+                        </td>
+                      </tr>
+  
+                      <!-- 이용시간 -->
+                      <tr>
+                        <th>이용시간</th>
+                        <td colspan="5">
+                          - [1시간권] 1시간 단위 반복 이용권<br>
+                          - [2시간권] 2시간 단위 반복 이용권
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+
+                <!-- 주의사항 -->
+                <h3>주의사항</h3>
+                <table class="precautionary">
+                  <tr>
+                    <th>01</th>
+                    <td>
+                      <b>-이용권 사용가능 기간은 첫 회 대여시점부터 계산합니다.</b><br>
+                      (예:1일권을 13시에 구매 한 후 15시에 처음으로 사용한 경우 사용가능기간은 다음날 15시까지입니다.) <br>
+                      - 1시간권 : 1회 대여 시 기본 대여시간은 60(분)입니다. 60(분)을 초과하는 경우 추가요금을 지불해야하므로 반납 후 다시 대여하여 이용하세요. <br>
+                      - 2시간권 : 1회 대여 시 기본 대여시간은 120(분)입니다. 120(분)을 초과하는 경우 추가요금을 지불해야하므로 반납 후 다시 대여하여 이용하세요. <br>
+                      (기본 대여시간이내에 반납하는 것을 반복하면 추가요금 없이 연속적으로 자전거를 이용할 수 있습니다.) <br>
+                      ※ 이용권 유효기간은 결제일로부터 3년
+                    </td>
+                  </tr>
+                </table>
+                <!-- /주의사항 -->
+              </div>
+              <!-- /요금안내 탭 -->
+            </article>
+          </section>
+        </main>
+        <!-- Main -->
+
+        <!-- Footer -->
+        <footer></footer>
+        <!-- /Footer -->
+    </div>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.sub_menu li');
+    const tabContents = document.querySelectorAll('#use_info, #map, #price');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        // 1. 모든 탭 내용 숨김
+        tabContents.forEach(content => content.style.display = 'none');
+
+        // 2. 선택한 버튼에 연결된 탭 보여줌
+        const targetId = this.dataset.target;
+        document.getElementById(targetId).style.display = 'block';
+
+        // 3. 탭 메뉴 활성화 클래스 처리
+        tabButtons.forEach(el => el.classList.remove('on'));
+        this.classList.add('on');
+      });
+    });
+  });
+</script>
+</body>
+</html>

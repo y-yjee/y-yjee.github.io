@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* Main */
+main{
+    width: 100%;
+    font-family: 'Noto KR', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+}
+.main_wrap{
+    margin: 0 auto;
+}
+main .main_first {
+    padding-top: 50px;
+    padding-bottom: 240px;
+}
+main .main_second {
+    padding-bottom: 240px;
+}

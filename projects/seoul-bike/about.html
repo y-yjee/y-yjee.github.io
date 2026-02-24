@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울자전거 따릉이 - 사업소개</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel="apple-touch-icon=precomposed" href="./images/logo.png">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./css/display_none_scrollbar.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./css/bike.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <!-- JS 플러그인 파일 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 페이지 관련 JS -->
+    <script src="./js/bike.js"></script>
+    <script>
+        $(function(){
+            // header 페이지 추가
+            $('header').load('./includes/header.html');
+            // footer 페이지 추가
+            $('footer').load('./includes/footer.html');
+        });
+    </script>
+</head> 
+<body>
+    <div id="wrap">
+        <header></header>
+        <hr class="line">
+        <main>
+            <div class="main_wrap">
+                <div class="main_first">
+                    <img src="./images/about/bikeseoul_web.png" alt="자전거와 함께하는 건강한 도시">
+                </div>
+    
+                <div class="main_second">
+                    <img src="./images/about/about_02.jpg" alt="자전거 도시">
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer></footer>
+        <!-- /Footer -->
+    </div>
+</body>
+</html>

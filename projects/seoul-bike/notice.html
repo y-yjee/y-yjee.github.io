@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel="apple-touch-icon=precomposed" href="./images/logo.png">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./css/display_none_scrollbar.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./css/notice.css">
+    <!-- JS 플러그인 파일 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 페이지 관련 JS -->
+    <script src="./js/bike.js"></script>
+    <script>
+        $(function(){
+            // header 페이지 추가
+            $('header').load('./includes/header.html');
+            // footer 페이지 추가
+            $('footer').load('./includes/footer.html');
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <hr class="line">
+        <main>
+            <section class="w1030">
+                <article class="title">
+                    <h2>공지사항</h2>
+                </article>
+                <article class="search">
+                    <form action="#" method="post">
+                        <input type="text" placeholder="검색어를 입력해주세요">
+                        <a href="#"><input type="button" value="검색" class="search_btn"></a>
+                    </form>
+                </article>
+                <article class="board">
+                    <table class="notice_list_all">
+                        <thead>
+                            <tr class="notice_title">
+                                <th>제목</th>
+                                <th>날짜</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#"><strong>[안내] 안전모 쓰고 즐기는 우리 아이 첫 따릉이 사진 인증 이벤트(6.12.~7.31.)</strong></a></td>
+                                <td>2025.05.11</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#"><strong>[안내] 시민참여 재배치 시행 안내</strong></a></td>
+                                <td>2025.05.07</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#"><strong>[안내] 공공자전거 '가족권' 오픈 안내(2025.4.23.~)</strong></a></td>
+                                <td>2025.04.21</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#"><strong>「교통사망사고 줄이기」따릉이 안전수칙 안내</strong></a></td>
+                                <td>2023.05.09</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#"><strong>[안내] 티머니고 앱 결제건 관련 안내</strong></a></td>
+                                <td>2023.11.06</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">[안내] 대여, 임시잠금 해제가 안 되시는 경우</a></td>
+                                <td>2023.06.15</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">개인정보 제공안내</a></td>
+                                <td>2019.03.11</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">이것만은 꼭! 따릉이 안전수칙</a></td>
+                                <td>2025.06.19</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">3968. 독산동 현대홈타운 금천과선교 앞 대여소 임시 폐쇄(예정) 안내</a></td>
+                                <td>2025.06.18</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">1677. 육군사관학교 앞 대여소 임시 폐쇄(예정) 안내</a></td>
+                                <td>2025.06.18</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="pagination">
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer></footer>
+        <!-- /Footer -->
+    </div>
+</body>
+</html>

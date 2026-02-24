@@ -1,0 +1,110 @@
+@charset "utf-8";
+main {
+    width: 1030px;
+    font-family: 'Noto KR', sans-serif;
+    margin-bottom: 50px;
+    margin: 0 auto;
+}
+.w320 {
+    width: 320px;
+    margin: 0 auto;
+}
+main .main_header {
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+main .main_header img {
+    width: 250px;
+    height: 55px;
+    display: block;
+    margin: 0 auto;
+}
+/* .login_container {
+    width: 320px;
+    margin: 0 auto;
+} */
+main .login_container ul li {
+    width: 320px;
+    height: 30px;
+    border-bottom: 1px solid #222222;
+}
+main .login_container ul li:nth-child(1) {
+    margin-bottom: 40px;
+}
+
+main .login_container ul li input {
+    border: none;
+    font-size: 15px;
+    color: #a1a3a1;
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+}
+.login_remember {
+    padding-top: 13px !important;
+    padding-bottom: 26px !important;
+    display: flex !important;
+    flex-flow: row wrap !important;
+    align-items: center !important;
+}
+.login_remember input {
+    width: 18px;
+    height: 18px;
+}
+.login_container .login_remember label {
+    font-size: 12px;
+}
+main .login_container input[type="submit"] {
+    width: 320px;
+    height: 43px;
+    background: #2c633c;
+    border-radius: 4px;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+main .login_join {
+    padding-top: 28px;
+    padding-bottom: 44px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    font-size: 12px;
+}
+main .login_join li a {
+    font-weight: bold;
+}
+
+main .login_sns {
+    padding-bottom: 50px;
+    text-align: center;
+}
+main .login_sns ul {
+    padding-top: 27px;
+    padding-bottom: 23px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    justify-content: center;
+}
+main .login_sns ul li:nth-child(1) {
+    margin-right: 24px;
+}
+main .login_sns ul li a img {
+    width: 45px;
+    height: 45px;
+}
+main .login_sns button {
+    background: #435464;
+    width: 320px;
+    height: 45px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 4px;
+}
+button[type="button"]:active{
+    background: red;
+}

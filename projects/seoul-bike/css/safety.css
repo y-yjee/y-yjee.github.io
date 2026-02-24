@@ -1,0 +1,237 @@
+/* 공통 */
+body, html {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 100%;
+}
+/* line */
+.line {
+    border-bottom: 1px solid #ededed;
+}
+
+/* 전체 wrap */
+#wrapper {
+    max-width: 1905px;
+    margin: 0 auto;
+}
+
+.w1560 {
+    width: 1560px;
+    margin: 0 auto;
+}
+
+/* 헤더 영역 그대로 유지 */
+/* Top Menu */
+.top_menu{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    line-height: 50px;
+}
+.top_menu .language {
+    height: 28px;
+    margin-top: 11px;
+}
+.top_list{
+    display: flex;
+}
+.top_list li{
+    margin-left: 15px;
+    font-weight: bold;
+}
+/* GNB Header */
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+.header h1{
+    padding-top: 18px;
+}
+.header h1 img:first-child{
+    height: 39px;
+    padding-right: 10px;
+}
+.header h1 img:last-child{
+    width: 200x;
+    height: 39px;
+}
+.gnb_list{
+    display: flex;
+    font-size: 1.125rem;
+}
+.gnb_list li{
+    margin-left: 50px;
+    line-height: 70px;
+    font-weight: bold;
+}
+
+
+/* 메인 */
+main {
+    margin-top: 48px;
+}
+.w1030 {
+    width: 1030px;
+    margin: 0 auto;
+}
+.title {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-bottom: 90px;
+    transform: translateX(16px);
+}
+.title h2 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* 슬라이드 */
+#gallery_wrap {
+    margin-bottom: 80px;
+    padding: 0 60px; /* 슬라이드 화살표 공간 확보 */
+}
+.flex-box{
+    width: 100%;
+    position: relative;
+
+}
+.slide_counter {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    z-index: 1000;
+  }
+
+.slide_gallery {
+    width: 100%;
+}
+
+.slide_gallery li {
+    width: 1030px !important;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide_inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 핵심 수정: 수직 중앙 */
+    padding: 0 60px;
+}
+
+.text_box {
+    width: 50%;
+    transform: translateY(-30%);
+}
+.text_box h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+.text_box p {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.image_box {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transform: translateX(-15%);
+}
+.image_box img {
+    width: auto;
+    max-width: none;
+}
+
+/* 슬라이드 버튼 */
+.bx-wrapper .bx-prev,
+.bx-wrapper .bx-next {
+    color: #000 !important;
+    width: 50px !important;
+    height: 60px !important;
+    background-color: #f1f1f1 !important;  /* 배경색 유지 */ 
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 999 !important;  /* z-index 증가시켜 다른 요소 위로 올라오게 처리 */
+    cursor: pointer !important;
+    opacity: 0.7 !important; /* 배경의 투명도만 조정 */
+    background-image: none !important;
+    box-shadow: none !important;
+}
+.bx-wrapper .bx-prev{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: 0px;
+}
+.bx-wrapper .bx-next{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: 0px;
+}
+/* 화살표에 대한 hover 효과 */
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-next:hover {
+    transform: translateY(-50%) scale(1.1) !important;  /* 화살표 크기 확대 */
+}
+
+/* 푸터 영역 그대로 유지 */
+footer {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #ededed;
+    font-size: 0.875rem;
+    margin: 0 auto;
+    height: 16.6287vh;
+}
+.footer {
+    width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.footer_info {
+    width: 880px;
+}
+.footer_info p {
+    color: #222;
+    line-height: 1.5625rem;
+    letter-spacing: 0.5px;
+}
+.footer_list {
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    margin: 30px 0 20px 0;
+}
+.footer_list li {
+    font-weight: 700;
+    padding-left: 36px;
+}
+.footer_list li:first-child {
+    padding-left: 0;
+}
+.footer_img {
+    margin-right: 48px;
+}
+.snslink {
+    margin: 30px 0 20px 0;
+    width: 132px;
+    display: flex;
+}
+.footer_img p img {
+    width: 105px;
+    height: 78px;
+    margin: -20px -10px 10px 10px;
+}

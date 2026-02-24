@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의/FAQ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel="apple-touch-icon=precomposed" href="./images/logo.png">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./css/display_none_scrollbar.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./css/bike.css">
+    <link rel="stylesheet" href="./css/faq.css">
+    <!-- JS 플러그인 파일 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 페이지 관련 JS -->
+    <script src="./js/bike.js"></script>
+    <script src="./js/faq.js"></script>
+    <script>
+        $(function(){
+            // header 페이지 추가
+            $('header').load('./includes/header.html');
+            // footer 페이지 추가
+            $('footer').load('./includes/footer.html',function(){
+                const buttons = document.querySelectorAll('.tab-link');
+                const contents = document.querySelectorAll('.tab-content');
+      
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // 버튼 활성화 처리
+                        buttons.forEach(btn => btn.classList.remove('current'));
+                        button.classList.add('current');
+            
+                        // 탭 콘텐츠 표시 처리
+                        const target = button.getAttribute('data-tab');
+                        contents.forEach(content => {
+                            if (content.id === target) {
+                                content.style.display = 'block';
+                            } else {
+                                content.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+    <script>
+        
+      </script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- Header -->
+        <header></header>
+        <!-- /Header -->
+        <hr class="line">
+
+        <main>
+            <section class="faq_section">
+                <h2>문의/FAQ</h2>
+                <div class="faq">
+                    <ul>
+                        <li data-target="question-list">
+                            <h3>자주하는 질문</h3>
+                            <p>자주하는 질문을 이용하시면 보다 빠르게 답변을 얻으실 수 있습니다.</p>
+                        </li>
+                        <li data-target="faq_img" class="on">
+                            <h3>문의하기</h3>
+                            <p>궁금한 점이 있으세요? 분야별 담당자들이 도와드리겠습니다.</p>
+                        </li> 
+                    </ul>
+                </div>
+                <div id="faq_img" class="hide_content">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="./images/faq/opi_1.png" alt="문의하기_이미지1">
+                                <p>대여 및 반납</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/faq/opi_2.png" alt="문의하기_이미지2">
+                                <p>자전거 추가배치</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/faq/opi_3.png" alt="문의하기_이미지3">
+                                <p>대여소(개설/폐쇄) </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"> 
+                                <img src="./images/faq/opi_4.png" alt="문의하기_이미지4">
+                                <p>결제/환불/마일리지</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/faq/opi_5.png" alt="문의하기_이미지5">
+                                <p>운영 및 정책 </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/faq/opi_6.png" alt="문의하기_이미지6">
+                                <p>자전거 및 시설관리</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/faq/opi_7.png" alt="문의하기_이미지7">
+                                <p>앱 또는 홈페이지 문의</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/faq/opi_8.png" alt="문의하기_이미지8">
+                                <p>방치 자전거 발견</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/faq/opi_9.png" alt="문의하기_이미지9">
+                                <p>1:! 문의하기</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/faq/opi_10.png" alt="문의하기_이미지10">
+                                <p>문의 내역 확인</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Board_search -->
+                <div id="question-list"  class="hide_content">
+                    <div class="board_search">
+                        <select class="menu" title="구분선택">
+                            <option>구분선택</option>
+                            <option value="FAQ_001">이용안내</option>
+                            <option value="FAQ_001">대여/반납</option>
+                            <option value="FAQ_001">앱/홈페이지</option>
+                            <option value="FAQ_001">결제/환불/마일리지</option>
+                            <option value="FAQ_001">대여소(개설/폐쇄)</option>
+                            <option value="FAQ_001">회원정보,로그인</option>
+                            <option value="FAQ_001">자전거/시설 관리</option>
+                            <option value="FAQ_001">기타</option>
+                            <option value="FAQ_001">운영 및 정책</option>
+                            <option value="FAQ_001">자전거 추가 배치</option>
+                            <option value="FAQ_001">QR 따릉이</option>
+                            <option value="FAQ_001">새싹 따릉이</option>
+                            <option value="FAQ_001">유실물</option>
+                        </select>
+                        <input type="text" id="searchValue" placeholder="제목/내용을 입력해 주세요.">
+                        <button type="button">검색</button>
+                    </div>
+                    <div class="search_img">
+                        <img src="./images/faq/faq.png" alt="대체이미지">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer> </footer>
+        <!-- /Footer -->
+    </div>
+       
+</body>
+</html>

@@ -1,0 +1,371 @@
+@charset "utf-8";
+/* Contact */
+.contact {
+    padding: 80px 0;
+}
+.contact_card {
+    /* 애니메이션 초기 상태 */
+    opacity: 1;
+    transform: translateY(0);
+}
+.contact_card.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+/* 카드 등장 */
+.contact_card.show {
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* 타이틀 & 소개 문구 */
+.contact_title {
+    font-family: 'GmarketSansMedium';
+    font-size: 2.5rem;
+    text-align: center;
+    color: #f1f2f5;
+    margin-bottom: 12px;
+}
+/* 구분선 */
+.contact_title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 40px auto 0;
+}
+.contact_text {
+    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 15px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.contact_break {
+    display: inline;
+}
+.contact_text .deployment {
+    background: rgba(185, 185, 185, 0.15);
+    color: #bd5555; 
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em; 
+}
+
+/* 카드 레이아웃 */
+.contact_category {
+    margin-top: 50px;
+}
+.contact_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* PC: 4개 */
+    gap: 20px;
+}
+
+/* 연락 카드 아이템 */
+.contact_item {
+    perspective: 1200px;
+}
+/* active → 뒤집힘 */
+.contact_item.active .contact_flip {
+    transform: rotateY(180deg);
+}
+/* flip wrapper */
+.contact_flip {
+    width: 100%;
+    height: 150px;   /* 기준 높이 */
+
+    cursor: pointer;
+    position: relative;
+
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(.4,.2,.2,1);
+}
+/* Front / Back 공통 */
+.contact_front,
+.contact_back {
+    height: 100%;
+    
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 28px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.05),
+        rgba(255,255,255,0.03)
+    );
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.02),
+        10px 10px 10px rgba(176, 176, 176, 0.02);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s ease;
+}
+/* Front (기본 면) */
+.contact_front {
+    transform: rotateY(0deg);
+}
+/* 아이콘 */
+.contact_icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+.contact_icon img {
+    width: 80%;
+    height: auto;
+    filter: brightness(0.9);
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+/* 클릭 유도용 링 */
+.icon_ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    pointer-events: none;
+
+    opacity: 0;
+    box-shadow:
+        0 0 0 rgba(120, 255, 214, 0.0);
+    transition: opacity 0.3s ease;
+}
+/* 아이콘 라벨 */
+.contact_label {
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 6px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+/* PC에서만 아이콘 hover 인터랙션 */
+@media (hover: hover) {
+    /* 아이콘 확대 */
+    .contact_item:hover .contact_icon {
+        transform: scale(1.1);
+        border-color: rgba(120, 255, 214, 0.55);
+    }
+    /* 클릭 유도 링 표시 */
+    .contact_item:hover .icon_ring {
+        opacity: 1;
+        box-shadow:
+            0 0 6px rgba(120, 255, 214, 0.35),
+            0 0 12px rgba(120, 255, 214, 0.2);
+    }
+    /* hover 시 이미지도 미세하게 */
+    .contact_item:hover .contact_icon img {
+        transform: scale(1.05);
+    }
+    /*  label 연동 */
+    .contact_item:hover .contact_label {
+        color: rgba(120, 255, 214, 0.85);
+        transform: translateY(2px);
+        text-shadow:
+            0 0 6px rgba(120, 255, 214, 0.35);
+    }
+}
+.contact_item.active:hover .contact_icon,
+.contact_item.active:hover .contact_label {
+    transform: none;
+    text-shadow: none;
+}
+
+
+/* Back (뒤집힌 면) */
+.contact_back {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotateY(180deg);
+
+    background: rgba(120, 255, 214, 0.06);
+    border-color: rgba(120, 255, 214, 0.35);
+}
+/* 닫기 버튼 */
+.contact_close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+
+    transition: background 0.25s ease;
+}
+.contact_close:hover {
+    background: rgba(255,255,255,0.15);
+}
+/* value (뒤집힌 면에서만 보임) */
+.contact_value {
+    font-size: 0.95rem;
+    color: #f1f2f5;
+    word-break: break-word;
+}
+
+/* GitHub 링크 버튼 */
+.contact_link {
+    cursor: pointer;
+    padding: 12px 22px; 
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.75);
+    
+    transition: 
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+/* Hover */
+.contact_link:hover {
+    background: #1a1a1a;         
+    color: #ffffff;
+    font-weight: 600;
+    border-color: #2a2a2a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+/* Active (클릭 순간) */
+.contact_link:active {
+    transform: translateY(0);
+    background: #141414;
+}
+/* Focus 접근성 */
+.contact_link:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+}
+
+/* active 상태 → 글로우 키프레임 */
+.contact_item.active .contact_back {
+    animation: contactGlow 3s ease-in-out infinite;
+}
+/* Glow Keyframes (Contact 전용 – Soft Mint) */
+@keyframes contactGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 6px rgba(120, 255, 214, 0.22),
+            0 0 12px rgba(120, 255, 214, 0.12);
+    }
+    50% {
+        box-shadow:
+            0 0 10px rgba(120, 255, 214, 0.35),
+            0 0 18px rgba(120, 255, 214, 0.18);
+    }
+}
+
+
+/* Mobile Contact Layout */
+@media (max-width: 768px) {
+    /* 전체 카드 여백 */
+    .contact_card {
+        padding-top: 40px;  
+        padding-bottom: 40px;
+    }
+    /* 타이틀 */
+    .contact_title {
+        font-size: 1.8rem;
+    }
+    .contact_title::after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.4);
+        margin: 30px auto 0;
+    }
+    /* 설명 텍스트 */
+    .contact_text {
+        font-size: 0.85rem;
+    }
+    .contact_break {
+        display: block;
+        margin-top: 4px; 
+    }
+    .contact_text .deployment {
+        display: inline-block;
+        margin-top: 2px;
+    }
+    /* 카드 그리드 */
+    .contact_list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    /* 뒷면 텍스트 */
+    .contact_value {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile 기본 인터랙션 힌트 (hover 없는 환경) */
+@media (hover: none) {
+    /* 아이콘 기본 포인트 */
+    .contact_icon {
+        border-color: rgba(120, 255, 214, 0.45);
+        box-shadow:
+            0 0 6px rgba(120, 255, 214, 0.22);
+    }
+    .contact_icon img {
+        transform: scale(1.05);
+        filter: brightness(1.05);
+    }
+    /* 라벨 컬러 강조 */
+    .contact_label {
+        color: rgba(120, 255, 214, 0.75);
+        text-shadow:
+            0 0 6px rgba(120, 255, 214, 0.25);
+    }
+    /* 클릭 유도 링 */
+    .icon_ring {
+        opacity: 1;
+        box-shadow:
+            0 0 4px rgba(120, 255, 214, 0.25),
+            0 0 8px rgba(120, 255, 214, 0.15);
+    }
+}

@@ -1,0 +1,373 @@
+@charset "utf-8";
+/* Home */
+.home {
+    min-height: 500px;
+    padding: 60px 0;
+    color: #fff;
+}
+.home .mobile_container {
+    display: flex;
+    gap: 40px;
+}
+
+/* 카드 영역 비율 */
+.home_intro_area { flex: 6; }
+.home_skills_area { flex: 4; }
+/* 공통 카드 */
+.intro_card,
+.skills_card {
+    height: 100%;
+    min-height: 420px;
+    border-radius: 20px;
+    padding: 36px;
+    box-sizing: border-box;
+    box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04),
+    10px 10px 10px rgba(176, 176, 176, 0.02);
+}
+
+/* ==================================================================== */
+/* 인트로 : 배경 이미지 + 타이핑 텍스트 + 키워드 */
+.intro_card {
+    background: url(../images/typing_bg2.jpg) center / cover no-repeat;
+    background-color: rgba(24,24,24,0.85);
+    backdrop-filter: blur(6px);
+}   
+/* 타이핑 텍스트 컨테이너 */
+.typing_box {
+    width: 100%;              /* 카드 기준 */
+    max-width: 800px;         /* 문장 최대 길이 */
+    margin: 20px auto 24px;      /* 가로 중앙 */
+    text-align: center;
+    height: auto;
+    position: relative;
+}
+/* PC 기본 */
+.typing_box span {
+    display: inline-block;
+    white-space: nowrap;
+    max-width: none;
+    min-height: auto;
+}
+/* 각 줄 스타일 */
+.typing_box span.line1,
+.typing_box span.line2 {
+    display: block;
+    width: 100%;              /* 항상 같은 기준 */
+    white-space: nowrap;      /* 줄바꿈 방지 */
+    word-break: keep-all;   /* 한글 깨짐 방지 */
+    min-height: 2.5rem;       /* 보조문구랑 간격 */
+}
+/* 첫 번째 줄 */
+.line1 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    min-height: 3.2rem;    /* 1줄 기준 안정화 */
+}
+/* 두 번째 줄 */
+.line2 {
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-size: 1.25rem;
+    color: #33c3ff;
+    margin-bottom: 0;
+    min-height: 2rem;      /* 1줄 기준 안정화 */
+}
+/* ==================================================================== */
+/* 보조 문구 */
+.intro_text {
+    text-align: center;
+    font-size: 1.05rem;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    color: rgba(255,255,255,0.1);
+}
+/* ==================================================================== */
+/* 키워드 섹션 전체 */
+.keyword_section {
+    text-align: center;
+    margin-top: 35px;
+}
+/* 안내 문구 (항상 고정) */
+.keyword_guide {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+}
+/* 키워드 알약 */
+.keyword_list {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.keyword_list li {
+    padding: 8px 16px;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(255,255,255,0.06);
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.4),
+        inset 0 0 0 1px rgba(255,255,255,0.08);
+    cursor: pointer; /* 클릭 가능한 요소임을 명확히 */
+    transition: all 0.3s ease;
+}
+/* 키워드 활성 상태 (PC + Mobile 공통) */
+.keyword_list li.active {
+    background: rgba(51,195,255,0.25);
+    color: #e9f8ff;
+    box-shadow:
+        0 10px 24px rgba(51,195,255,0.25),
+        inset 0 0 0 1px rgba(51,195,255,0.6);
+    transform: translateY(-4px);
+}
+/* 키워드 설명 문구 */
+.keyword_desc {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #9adfff;
+    min-height: 1.2em;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+/* 설명 표시 상태 (JS에서 제어) */
+.keyword_desc.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Keyword Ripple Effect */
+.keyword_list li {
+    position: relative;
+    overflow: hidden; /* ripple 넘침 방지 */
+}
+.keyword_list li .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(0);
+    animation: keyword-ripple 0.6s ease-out;
+    pointer-events: none;
+}
+@keyframes keyword-ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* ==================================================================== */
+/* 스킬 : 탭 클릭시 콘텐츠 */
+.skills_card {
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+/* 타이틀 */
+.skills_title {
+    font-family: 'GmarketSansMedium';
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+/* 탭 버튼 */
+.skills_tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+/* 비활성 탭 */
+.skills_tabs button {
+    flex: 1;
+    padding: 8px 0;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* 활성 탭 */
+.skills_tabs button.active {
+    background: #1a1a1a;  /* ⭐ soft black */
+    color: #ffffff;
+    font-weight: 600;
+    border: 1px solid #2a2a2a;
+}
+/* 콘텐츠 영역 */
+.skills_contents {
+    flex: 1;
+    position: relative;
+}
+/* 패널 */
+.skills_panel {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+.skills_panel.active {
+    display: grid;
+}
+/* 아이콘 카드 */
+.skills_panel li {
+    background: rgba(255, 255, 255, 0.08); /* ⭐ 아주 연한 배경 */
+    border-radius: 12px;
+    padding: 14px 10px; /* ⭐ 아이콘/텍스트 여백 확보 */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: 0.3s;
+}
+/* 호버 시 살짝 강조 (있어도 부담 안 되게) */
+.skills_panel li:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-2px);
+}
+/* 아이콘 이미지 사이즈 업 */
+.skills_panel img {
+    width: 48px;      /* ⭐ 기존 40px → 48px */
+    height: 48px;
+    object-fit: contain;
+}
+/* 아이콘과 텍스트 사이 간격 */
+.skills_panel span {
+    margin-top: 6px;  
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+/* Skills Ripple effect */
+.skills_tabs button {
+    position: relative;
+    overflow: hidden;
+}
+.skills_tabs button .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+/* ==================================================================== */
+
+
+/* Mobile Home Layout */
+@media (max-width: 768px) {
+    .home {
+        padding: 40px 0px;
+    }
+    .home .mobile_container {
+        display: block;   /* ⭐ PC flex 차단 */
+    }
+    /* 카드들은 부모 폭을 그대로 사용 */
+    .intro_card,
+    .skills_card {
+        width: 100%;
+        box-sizing: border-box;
+    } 
+    .intro_card {
+        min-height: 520px; /* 기존 420px → 500px */
+        margin: 0 auto;
+        padding-bottom: 60px; /* 하단 여유 공간 확보 */
+        box-sizing: border-box;
+    }
+    /* 타이핑 텍스트 */
+    .typing_box {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    .typing_box span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .typing_box span.line1,
+    .typing_box span.line2 {
+        white-space: normal; /* 자동 줄바꿈 허용 */
+        word-break: keep-all;  /* 한글 깨짐 방지 */
+    }
+    /* line1 모바일 2줄, 중앙 정렬 */
+    .line1 {
+        font-size: clamp(1.6rem, 5vw, 1.8rem);
+        line-height: 1.3;
+        height: calc(1.3em * 2);   /* 🔒 고정 */
+        max-width: 18ch;              /* 글자 수 제한 → 2줄 강제 */
+        margin: 0 auto 12px auto;     /* 중앙 정렬 + line2와 간격 */
+    }
+    /* line2 모바일 2줄, 중앙 정렬 */
+    .line2 {
+        font-size: clamp(0.95rem, 4vw, 1rem);
+        line-height: 1.5;
+        height: calc(1.5em * 2);   /* 🔒 고정 */
+        max-width: 16ch;              /* 글자 수 제한 → 2줄 정도 */
+        margin: 0 auto;
+    }
+    /* 보조 문구 */
+    .intro_text {
+        font-size: 0.875rem;
+        margin-top: 10px;
+        margin-bottom: 40px;  /* 키워드와 간격 */
+    }
+    /* 고정 안내 문구 */
+    .keyword_section {
+        margin-top: 0;        /* 기존 55px 제거 */
+    }
+    .keyword_guide {
+        font-size: 0.75rem;
+        margin-bottom: 15px;   /* 알약과 간격 축소 */
+        opacity: 0.6;
+    }
+    /* 키워드 알약 */
+    .keyword_list {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .keyword_list li {
+        font-size: 0.875rem;
+        padding: 7px 14px;
+    }
+    /* 설명 표시 */
+    .keyword_desc {
+        font-size: 0.9rem;
+        margin-top: 30px;
+        line-height: 1.4;
+    }
+    .keyword_desc.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Mobile_Skills_Area */
+    .skills_panel {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+    .skills_tabs button {
+        font-size: 0.75rem;
+    }
+    .skills_panel li {
+        padding: 12px 8px;
+    }
+    .skills_panel img {
+        width: 44px;
+        height: 44px;
+    }
+    .skills_panel span {
+        font-size: 0.75rem;
+    }
+}

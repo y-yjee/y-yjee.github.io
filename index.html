@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoonjee Main Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./assets/images/favmc32.png">
+    <link rel="apple-touch-icon-precomposed" href="./assets/images/favmc180.png">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style_home.css">
+    <link rel="stylesheet" href="./assets/css/style_about.css">
+    <link rel="stylesheet" href="./assets/css/style_projects.css">
+    <link rel="stylesheet" href="./assets/css/style_contact.css">
+    <!-- JS 플러그인 파일 -->
+    <script src="./assets/js/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/prefixfree.min.js"></script>
+    <!-- 페이지 관련 JS -->
+    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/app_home.js" defer></script>
+    <script src="./assets/js/app_about.js" defer></script>
+    <script src="./assets/js/app_project.js" defer></script>
+    <script src="./assets/js/app_contact.js" defer></script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- Header -->
+        <header class="sticky">
+            <!-- GNB Menu -->
+            <div class="gnb_all w1500">
+                <div class="mobile_container">
+                    <div class="logo">
+                        <img src="./assets/images/favmc180.png" alt="">
+                        <h4>Front-End. &nbsp; Developer</h4>
+                    </div>
+                    <nav class="category">
+                        <ul class="gnb">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about_me">About Me</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>  
+                </div>              
+            </div>
+            <!-- /GNB Menu -->
+        </header> 
+        <!-- /Header -->
+
+        <!-- Main -->
+        <main>
+            <!-- Home -->
+            <section id="home" class="home w1500">
+                <div class="mobile_container card_interval">
+                    <!-- 인트로 영역 -->
+                    <div class="home_intro_area">
+                        <!-- 인트로 카드 -->
+                        <div class="intro_card">
+                            <!-- 타이핑 텍스트 -->
+                            <div class="typing_box">
+                                <span class="line1">작은 디테일 하나도 놓치지 않습니다.</span>
+                                <span class="line2">사용자 경험과 안정성을 함께 고민하는 개발자</span>
+                            </div>
+                            <!-- 보조 문구 -->
+                            <p class="intro_text">
+                                Designing with Care, Developing with Purpose.
+                            </p>
+                            <!-- 키워드 영역 전체 -->
+                            <div class="keyword_section">
+                                <!-- 고정 안내 문구 (항상 보임) -->
+                                <p class="keyword_guide">
+                                    키워드를 클릭해 보세요.
+                                </p>
+                                <!-- 키워드 알약 -->
+                                <ul class="keyword_list">
+                                    <li data-desc="새로운 기술을 탐구하고 서비스에 적용합니다">
+                                        멈추지 않는 호기심
+                                    </li>
+                                    <li data-desc="의견을 기록하고 존중하며 더 나은 방향을 찾습니다">
+                                        함께 가고 싶은 동료
+                                    </li>
+                                    <li data-desc="배움을 반복하며 내 것으로 만들기 위해 노력합니다">
+                                        꾸준히 성장하는 사람
+                                    </li>
+                                </ul>
+                                <!-- 키워드 설명 영역 (클릭 시 표시) -->
+                                <p class="keyword_desc"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 스킬 영역 -->
+                    <div class="home_skills_area">
+                        <!-- 스킬 카드 -->
+                        <div class="skills_card reveal">
+                            <!-- 타이틀 -->
+                            <h3 class="skills_title">SKILLS</h3>
+                            <!-- 스킬 탭 -->
+                            <div class="skills_tabs">
+                                <button class="active" data-tab="frontend">프론트엔드</button>
+                                <button data-tab="backend">백엔드</button>
+                                <button data-tab="db_server">DB · 서버</button>
+                                <button data-tab="tools">협업 · 도구</button>
+                            </div>
+                            <!-- 스킬 콘텐츠 -->
+                            <div class="skills_contents">
+                                <!-- 프론트엔드 -->
+                                <ul class="skills_panel active" data-panel="frontend">
+                                    <li>
+                                        <img src="./assets/images/skills/html.svg" alt="HTML5">
+                                        <span>HTML</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/css.svg" alt="CSS3">
+                                        <span>CSS</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/javascript.svg" alt="JavaScript">
+                                        <span>JavaScript</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/jquery.svg" alt="jQuery">
+                                        <span>jQuery</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/react.svg" alt="React">
+                                        <span>React</span>
+                                    </li>
+                                </ul>
+                                <!-- 백엔드 -->
+                                <ul class="skills_panel" data-panel="backend">
+                                    <li>
+                                        <img src="./assets/images/skills/java.svg" alt="Java">
+                                        <span>Java</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/spring.svg" alt="Spring Boot">
+                                        <span>Spring Boot</span>
+                                    </li>
+                                </ul>
+                                <!-- DB · 서버 -->
+                                <ul class="skills_panel" data-panel="db_server">
+                                    <li>
+                                        <img src="./assets/images/skills/oracle.svg" alt="Oracle SQL">
+                                        <span>Oracle SQL</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/aws.svg" alt="AWS">
+                                        <span>AWS</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/tomcat.svg" alt="Apache Tomcat">
+                                        <span>Tomcat</span>
+                                    </li>
+                                </ul>
+                                <!-- 협업 · 도구 -->
+                                <ul class="skills_panel" data-panel="tools">
+                                    <li>
+                                        <img src="./assets/images/skills/vscode.svg" alt="VS Code">
+                                        <span>VS Code</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/eclipse.svg" alt="Eclipse">
+                                        <span>Eclipse</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/rpa.svg" alt="RPA">
+                                        <span>RPA</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/github.svg" alt="GitHub">
+                                        <span>GitHub</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/notion.svg" alt="Notion">
+                                        <span>Notion</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/skills/figma.svg" alt="Figma">
+                                        <span>Figma</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /Home -->
+
+            <!-- About Me -->
+            <section id="about_me" class="about_me w1500">
+                <div class="mobile_container">
+                    <!-- 소개 카드 -->
+                    <div class="about_card reveal">
+                        <!-- 인트로 영역 -->
+                        <div class="about_intro">
+                            <h2 class="about_title">About Me</h2>
+                            <p class="about_text">더 나은 코드, 더 건강한 협업을 목표로
+                                <span class="about_break">
+                                    매 순간 고민하고 선택하는 저의 <span class="commit">&lt;Commit&gt;</span> 입니다.
+                                </span>
+                            </p>
+                        </div>
+                        <!-- 미모티콘 이미지 -->
+                        <div class="about_img">
+                            <img src="./assets/images/mimoticon1.png" alt="미모티콘1">
+                        </div>
+                        <!-- 해시태그 -->
+                        <div class="about_hashtag">
+                            <p>#끊임없는_배움</p>
+                            <p>#꼼꼼한_성격</p>
+                            <p>#긍정_마인드</p>
+                            <p>#도전_정신</p>
+                        </div>
+                        <!-- 펼치기 버튼 -->
+                        <div class="about_toggle_wrap">
+                            <button class="round_btn">
+                                전체 보기 <img src="./assets/images/down.svg" alt="down arrow">
+                            </button>
+                        </div> 
+                        <!-- 상세 설명(FAQ) -->
+                        <div class="about_faq">
+                            <div class="faq_item">
+                                <div class="faq_question">
+                                    <h3>#끊임없는 배움의 자세</h3>
+                                    <img src="./assets/images/down.svg" alt="toggle arrow" class="faq_arrow">
+                                </div>
+                                <div class="faq_answer">
+                                    <p>
+                                        새로운 기술과 트렌드를 배우는 것을 즐기며, 배우는 과정에서 얻는 작은 성취가 큰 동기부여가 됩니다.<br>
+                                        공부한 내용을 바로 프로젝트에 적용하며 경험으로 체화하는 것을 중요하게 생각합니다.<br>
+                                        끊임없이 학습하고 성장하며, 변화하는 개발 환경에서도 유연하게 대응할 수 있는 개발자가 되기 위해 노력하고 있습니다.<br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq_item">
+                                <div class="faq_question">
+                                    <h3>#꼼꼼함으로 만드는 완성도</h3>
+                                    <img src="./assets/images/down.svg" alt="toggle arrow" class="faq_arrow">
+                                </div>
+                                <div class="faq_answer">
+                                    <p>
+                                        작은 디테일까지 놓치지 않는 꼼꼼한 성격 덕분에, 코드 작성 과정에서 발생할 수 있는 오류를 미리 예방할 수 있습니다.<br>
+                                        또한 사용자 경험까지 세심하게 고려하여 안정적이고 완성도 높은 결과물을 만들어내는 것을 중요하게 생각합니다.<br>
+                                        문제를 깊이 파고들어 끝까지 해결하는 과정에서 큰 보람을 느끼며, 신뢰할 수 있는 개발자가 되기 위해 노력합니다.<br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq_item">
+                                <div class="faq_question">
+                                    <h3>#긍정적인 마인드로 문제 해결</h3>
+                                    <img src="./assets/images/down.svg" alt="toggle arrow" class="faq_arrow">
+                                </div>
+                                <div class="faq_answer">
+                                    <p>
+                                        어려운 문제나 예기치 못한 상황에서도 긍정적인 태도로 접근합니다.<br>
+                                        실패와 시행착오는 성장의 발판으로 삼고, 문제를 해결하며 얻은 경험을 팀과 공유합니다.<br>
+                                        긍정적인 마인드 덕분에 협업 과정에서도 원활한 소통이 가능하며, 팀 전체의 생산성을 높이는 데 기여할 수 있습니다.<br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq_item">
+                                <div class="faq_question">
+                                    <h3>#도전 정신으로 새로운 시도</h3>
+                                    <img src="./assets/images/down.svg" alt="toggle arrow" class="faq_arrow">
+                                </div>
+                                <div class="faq_answer">
+                                    <p>
+                                        낯선 기술이나 새로운 프로젝트에도 주저하지 않고 도전하며, 실패를 두려워하지 않고 경험을 쌓아갑니다.<br>
+                                        새로운 시도를 통해 얻은 인사이트와 지식은 더 나은 개발자로 성장하는 밑거름이 됩니다.<br>
+                                        끊임없이 스스로를 발전시키고, 창의적인 아이디어와 도전 정신으로 프로젝트와 팀에 긍정적인 영향을 주고자 합니다.<br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+            <!-- /About Me -->
+
+            <!-- Projects -->
+            <section id="projects" class="projects w1500">
+                <div class="mobile_container card_interval">
+                    <!-- 섹션 헤더 -->
+                    <div class="section_head hidden">
+                        <h2 class="section_title">Projects</h2>
+                        <p class="section_guide">
+                            <span class="guide_pc">
+                                프로젝트 이미지에 마우스를 올려 실제 화면 흐름을 확인해 보세요.
+                            </span>
+                            <span class="guide_mobile">
+                                프로젝트 이미지를 터치하여<br>
+                                실제 화면 흐름을 확인해 보세요.
+                            </span>
+                        </p>
+                    </div>
+                    <!-- 프로젝트 카드 -->
+                    <div class="project_grid">
+                        <!-- 1.프로젝트(따릉이) -->
+                        <div class="project_card hidden project_blue">
+                            <!-- 비디오 -->
+                            <div class="project_img fixed video">
+                                <video src="./assets/images/projects/Alegria_Seoulbike.mp4" 
+                                poster="./assets/images/projects/Alegria_Seoulbike.jpg" muted playsinline></video>
+                                <!-- 재생 / 일시정지 아이콘 -->
+                                <div class="video_control">
+                                    <i class="fa fa-play"></i>
+                                </div>
+                                <!-- 가이드 텍스트 -->
+                                <div class="video_hint">
+                                    <span class="pc_text">Click to Play</span>
+                                    <span class="mo_text">Tap to Play</span>
+                                </div>
+                            </div>
+                            <!-- 인트로 -->
+                            <div class="project_info">
+                                <h3 class="project_title">
+                                    <span class="title_pc">
+                                        서울시 공공자전거 ‘따릉이’ <span class="title_small">(클론 & 메인 구조 개선)</span>
+                                    </span>
+                                    <span class="title_mobile">
+                                        서울시 공공자전거 ‘따릉이’<br>
+                                        <span class="title_small">(클론 & 메인 구조 개선)</span>
+                                    </span>
+                                </h3>
+                                <p class="project_desc">
+                                    <span class="desc_pc">
+                                        기존 따릉이 웹사이트를 분석하여 메인 화면 구조를 개선하고 서비스 페이지를 구현한 프로젝트
+                                    </span>
+                                    <span class="desc_mobile">
+                                        기존 따릉이 웹사이트를 분석하여 메인 화면 구조를 개선하고 서비스 페이지를 구현한 프로젝트
+                                    </span>
+                                </p>
+                                <div class="project_tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>jQuery</span>
+                                    <span>Map API</span>
+                                    <span>bxSlider</span>
+                                </div>
+                                <!-- 링크 이동 -->
+                                <div class="project_links">
+                                    <a href="/projects/seoul-bike/" target="_blank" class="link_btn page_link">Live Demo</a>
+                                    <a href="#" target="_blank" class="link_btn github_link">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2.프로젝트(KD손해보험) -->
+                        <div class="project_card hidden project_blue">
+                            <!-- 비디오 -->
+                            <div class="project_img fixed video">
+                                <video src="./assets/images/projects/Alegria_Insurance.mp4" 
+                                poster="./assets/images/projects/Alegria_Insurance.jpg" muted playsinline></video>
+                                <!-- 재생 / 일시정지 아이콘 -->
+                                <div class="video_control">
+                                    <i class="fa fa-play"></i>
+                                </div>
+                                <!-- 가이드 텍스트 -->
+                                <div class="video_hint">
+                                    <span class="pc_text">Click to Play</span>
+                                    <span class="mo_text">Tap to Play</span>
+                                </div>
+                            </div>
+                            <!-- 인트로 -->
+                            <div class="project_info">
+                                <h3 class="project_title">
+                                    <span class="title_pc">
+                                        KD손해보험 관리자 페이지 <span class="title_small">(가상 보험사 백오피스 시스템)</span>
+                                    </span>
+                                    <span class="title_mobile">
+                                        KD손해보험 관리자 페이지<br>
+                                        <span class="title_small">(가상 보험사 백오피스 시스템)</span>
+                                    </span>
+                                </h3>
+                                <p class="project_desc">
+                                    <span class="desc_pc">
+                                        보험사 관리자 페이지의 실무 구조를 이해하고 Spring 기반 데이터 관리 시스템을 구현한 프로젝트
+                                    </span>
+                                    <span class="desc_mobile">
+                                        보험사 관리자 페이지의 실무 구조를 이해하고 <br> 
+                                        Spring 기반 데이터 관리 시스템을 구현한 프로젝트
+                                    </span>
+                                </p>
+                                <div class="project_tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JSP</span>
+                                    <span>Spring MVC</span>
+                                    <span>MyBatis</span>
+                                    <span>Oracle DB</span>
+                                    <span>JDBC</span>
+                                </div>
+                                <!-- 링크 이동 -->
+                                <div class="project_links">
+                                    <a href="#" target="_blank" class="link_btn page_link">Demo Video</a>
+                                    <a href="#" target="_blank" class="link_btn github_link">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 3.프로젝트(쇼핑몰) -->
+                        <div class="project_card hidden project_pink">
+                            <!-- 이미지 -->
+                            <div class="project_img scroll">
+                                <img src="./assets/images/projects/Zara_Page.png" alt="쇼핑몰 웹 사이트">
+                            </div>
+                            <!-- 인트로 -->
+                            <div class="project_info">
+                                <h3 class="project_title">
+                                    <span class="title_pc">
+                                        패션 브랜드 웹사이트
+                                    </span>
+                                    <span class="title_mobile">
+                                        패션 브랜드 웹사이트
+                                    </span>
+                                </h3>
+                                <p class="project_desc">
+                                    <span class="desc_pc">
+                                        메뉴 구조와 상품 시각화를 중심으로 패션 브랜드 메인 화면 구성과 인터랙션을 구현한 프로젝트
+                                    </span>
+                                    <span class="desc_mobile">
+                                        메뉴 구조와 상품 시각화를 중심으로 
+                                        패션 브랜드 메인 화면 구성과 인터랙션을 구현한 프로젝트
+                                    </span>
+                                </p>
+                                <div class="project_tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>jQuery</span>
+                                </div>
+                                <!-- 링크 이동 -->
+                                <div class="project_links">
+                                    <a href="#" target="_blank" class="link_btn my_link">My Version</a>
+                                    <a href="#" target="_blank" class="link_btn class_link">Class Version</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4.프로젝트(브랜드 영상) -->
+                        <div class="project_card hidden project_pink">
+                            <!-- 비디오 -->
+                            <div class="project_img fixed video">
+                                <video src="./assets/images/projects/Event_Page.mp4" 
+                                poster="./assets/images/projects/Event_Page.jpg" muted playsinline></video>
+                                <!-- 재생 / 일시정지 아이콘 -->
+                                <div class="video_control">
+                                    <i class="fa fa-play"></i>
+                                </div>
+                                <!-- 가이드 텍스트 -->
+                                <div class="video_hint">
+                                    <span class="pc_text">Click to Play</span>
+                                    <span class="mo_text">Tap to Play</span>
+                                </div>
+                            </div>
+                            <!-- 인트로 -->
+                            <div class="project_info">
+                                <h3 class="project_title">
+                                    <span class="title_pc">
+                                        이벤트 프로모션 영상 웹페이지
+                                    </span>
+                                    <span class="title_mobile">
+                                        이벤트 프로모션 영상 웹페이지
+                                    </span>
+                                </h3>
+                                <p class="project_desc">
+                                    <span class="desc_pc">
+                                        영상 제어 기능과 1·2Depth 메뉴 구조, 인터랙션 버튼과 애니메이션 효과를 구현한 프로젝트
+                                    </span>
+                                    <span class="desc_mobile">
+                                        영상 제어 기능과 1·2Depth 메뉴 구조, <br>
+                                        인터랙션 버튼과 애니메이션 효과를 구현한 프로젝트
+                                    </span>
+                                </p>
+                                <div class="project_tags">
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>JavaScript</span>
+                                    <span>jQuery</span>
+                                    <span>Video</span>
+                                    <span>CSS Animation</span>
+                                </div>
+                                <!-- 링크 이동 -->
+                                <div class="project_links">
+                                    <a href="#" target="_blank" class="link_btn my_link">My Version</a>
+                                    <a href="#" target="_blank" class="link_btn class_link">Class Version</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5.프로젝트(반응형) -->
+                        <div class="project_card hidden project_pink">
+                            <!-- 이미지 -->
+                            <div class="project_img scroll">
+                                <img src="./assets/images/projects/RWD_Page.png" alt="반응형 웹 사이트">
+                            </div>
+                            <!-- 인트로 -->
+                            <div class="project_info">
+                                <h3 class="project_title">
+                                    <span class="title_pc">
+                                        반응형 웹 레이아웃 템플릿
+                                    </span>
+                                    <span class="title_mobile">
+                                        반응형 웹 레이아웃 템플릿
+                                    </span>
+                                </h3>
+                                <p class="project_desc">
+                                    <span class="desc_pc">
+                                        다양한 디바이스 환경에 대응하는 반응형 웹 레이아웃 구조를 이해하고 구현한 프로젝트
+                                    </span>
+                                    <span class="desc_mobile">
+                                        다양한 디바이스 환경에 대응하는 반응형 웹 레이아웃 구조를 이해하고 구현한 프로젝트
+                                    </span>
+                                </p>
+                                <div class="project_tags">
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>JavaScript</span>
+                                    <span>jQuery</span>
+                                    <span>Responsive Web</span>
+                                    <span>Media Query</span>
+                                </div>
+                                <!-- 링크 이동 -->
+                                <div class="project_links">
+                                    <a href="#" target="_blank" class="link_btn my_link">My Version</a>
+                                    <a href="#" target="_blank" class="link_btn class_link">Class Version</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6.프로젝트(완다비전) -->
+                        <div class="project_card hidden project_purple">
+                            <!-- 비디오 -->
+                            <div class="project_img fixed video">
+                                <video src="./assets/images/projects/Wanda_Vision.mp4" 
+                                poster="./assets/images/projects/Wanda_Vision.jpg" muted playsinline></video>
+                                <!-- 재생 / 일시정지 아이콘 -->
+                                <div class="video_control">
+                                    <i class="fa fa-play"></i>
+                                </div>
+                                <!-- 가이드 텍스트 -->
+                                <div class="video_hint">
+                                    <span class="pc_text">Click to Play</span>
+                                    <span class="mo_text">Tap to Play</span>
+                                </div>
+                            </div>
+                            <!-- 인트로 -->
+                            <div class="project_info">
+                                <h3 class="project_title">
+                                    <span class="title_pc">
+                                        리액트 기반 SPA 웹 애플리케이션
+                                    </span>
+                                    <span class="title_mobile">
+                                        리액트 기반 SPA 웹 애플리케이션
+                                    </span>
+                                </h3>
+                                <p class="project_desc">
+                                    <span class="desc_pc">
+                                        새로고침 없이 페이지가 전환되는 영상·슬라이드 중심의 웹 애플리케이션을 구현한 프로젝트
+                                    </span>
+                                    <span class="desc_mobile">
+                                        새로고침 없이 페이지가 전환되는 영상·슬라이드 중심의 웹 애플리케이션을 구현한 프로젝트
+                                    </span>
+                                </p>
+                                <div class="project_tags">
+                                    <span>React</span>
+                                    <span>JavaScript</span>
+                                    <span>SPA</span>
+                                    <span>ReactRouter</span>
+                                    <span>Swiper</span>
+                                    <span>useState</span>
+                                    <span>useEffect</span>
+                                    <span>CSS</span>
+                                </div>
+                                <!-- 링크 이동 -->
+                                <div class="project_links">
+                                    <a href="#" target="_blank" class="link_btn react_link">Live Demo</a>
+                                    <a href="#" target="_blank" class="link_btn github_link">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /Projects -->
+
+            <!-- Contact -->
+            <section id="contact" class="contact w1500">
+                <div class="mobile_container">
+                    <!-- 연락 카드 -->
+                    <div class="contact_card reveal">
+                        <!-- 인트로 영역 -->
+                        <div class="contact_intro">
+                            <h2 class="contact_title">Contact</h2>
+                            <p class="contact_text"> 코드 한 줄보다 소통 한 마디의 힘을 믿습니다.
+                                <span class="contact_break">
+                                    함께 고민하며 의미 있는 <span class="deployment">&lt;배포&gt;</span>를 완성해가고 싶습니다.
+                                </span>
+                            </p>
+                        </div>
+                        <!-- 연락 리스트 -->
+                        <div class="contact_category">
+                            <ul class="contact_list">
+                                <!-- Email -->
+                                <li class="contact_item">
+                                    <div class="contact_flip">
+                                        <!-- 앞면 -->
+                                        <div class="contact_front">
+                                            <div class="contact_icon">
+                                                <img src="./assets/images/email.svg" alt="Email">
+                                                <span class="icon_ring"></span>
+                                            </div>
+                                            <p class="contact_label">Email</p>
+                                        </div>
+                                        <!-- 뒷면 -->
+                                        <div class="contact_back">
+                                            <button class="contact_close" aria-label="Close">×</button>
+                                            <p class="contact_value">
+                                                <a href="mailto:example@email.com">example@email.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Phone -->
+                                <li class="contact_item">
+                                    <div class="contact_flip">
+                                        <!-- 앞면 -->
+                                        <div class="contact_front">
+                                            <div class="contact_icon">
+                                                <img src="./assets/images/phone.svg" alt="Phone">
+                                                <span class="icon_ring"></span>
+                                            </div>
+                                            <p class="contact_label">Phone</p>
+                                        </div>
+                                        <!-- 뒷면 -->
+                                        <div class="contact_back">
+                                            <button class="contact_close" aria-label="Close">×</button>
+                                            <p class="contact_value">010-0000-0000</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Location -->
+                                <li class="contact_item">
+                                    <div class="contact_flip">
+                                        <!-- 앞면 -->
+                                        <div class="contact_front">
+                                            <div class="contact_icon">
+                                                <img src="./assets/images/location.svg" alt="Location">
+                                                <span class="icon_ring"></span>
+                                            </div>
+                                            <p class="contact_label">Location</p>
+                                        </div>
+                                        <!-- 뒷면 -->
+                                        <div class="contact_back">
+                                            <button class="contact_close" aria-label="Close">×</button>
+                                            <p class="contact_value">Seoul, Korea</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- GitHub -->
+                                <li class="contact_item">
+                                    <div class="contact_flip">
+                                        <!-- 앞면 -->
+                                        <div class="contact_front">
+                                            <div class="contact_icon">
+                                                <img src="./assets/images/github.svg" alt="GitHub">
+                                                <span class="icon_ring"></span>
+                                            </div>
+                                            <p class="contact_label">GitHub</p>
+                                        </div>
+                                        <!-- 뒷면 -->
+                                        <div class="contact_back">
+                                            <button class="contact_close" aria-label="Close">×</button>
+                                            <!-- 링크 이동 액션 -->
+                                            <button
+                                                class="contact_link"
+                                                data-url="https://github.com/yourname">
+                                                GitHub로 이동 →
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <!-- /Contact -->
+        </main> 
+        <!-- /Main -->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer_inner w1500">
+                <div class="footer_brand">
+                    <img src="./assets/images/favmc180.png" alt="Yoonjee logo" class="footer_logo">
+                    <p class="footer_text">
+                        Built with care. © 2026 Yoonjee
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- /Footer -->
+    </div>    
+</body>
+</html>

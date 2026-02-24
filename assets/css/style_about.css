@@ -1,0 +1,315 @@
+@charset "utf-8";
+/* About Me */
+.about_me {
+    padding: 80px 0;
+}
+.about_card {
+    /* 애니메이션 초기 상태 */
+    opacity: 1;
+    transform: translateY(0);
+}
+.about_card.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+/* 카드 등장 */
+.about_card.show {
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* 타이틀 & 소개 문구 */
+.about_title {
+    font-family: 'GmarketSansMedium';
+    font-size: 2.5rem;
+    color: #f1f2f5;
+    text-align: center;
+    margin-bottom: 12px;
+}
+/* 구분선 */
+.about_title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 40px auto 0;
+}
+.about_text {
+    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 15px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.about_break {
+    display: inline;
+}
+.about_text .commit {
+    background: rgba(185, 185, 185, 0.15);
+    color: #bd5555; 
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em; 
+}
+
+/* 이미지 (비율 고정 + 기종 안전) */
+.about_img {
+    display: flex;
+    justify-content: center;
+}
+.about_img img {
+    width: 300px;
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+.about_img img.active {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 8px rgba(245, 245, 245, 0.2));
+}
+
+/* 해시태그 */
+.about_hashtag {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;  
+    margin-bottom: 40px;
+    row-gap: 10px;   /* 세로 간격만 살짝 줄이기 */
+    column-gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, max-content); /* PC 4개 */
+    justify-content: center;
+}
+.about_hashtag p {
+    font-size: 1.05rem;
+    font-weight: 500;     
+    letter-spacing: -0.01em;
+    color: rgba(255,255,255,0.75);
+    position: relative;
+    padding-left: 20px;
+}
+.about_hashtag p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background: #F4D35E;
+    border-radius: 50%;
+    transform: translateY(-50%);
+
+    animation: glowPulse 2.5s ease-in-out infinite;
+}
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 6px rgba(244, 211, 94, 0.6),
+            0 0 12px rgba(244, 211, 94, 0.3);
+    }
+    50% {
+        box-shadow:
+            0 0 10px rgba(244, 211, 94, 0.9),
+            0 0 18px rgba(244, 211, 94, 0.6);
+    }
+}
+
+/* 전체보기 버튼 */
+.about_toggle_wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.round_btn {
+    gap: 6px;
+    padding: 8px 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+
+    color: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50px;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.round_btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+.round_btn img {
+    width: 14px;  
+    height: auto;
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.round_btn.active img {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* FAQ 영역 */
+.about_faq {
+    max-width: 780px;   
+    margin: 0 auto;   
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+.faq_item {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.05),
+        rgba(255,255,255,0.03)
+    );
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+
+    overflow: hidden; /* 질문+답변 붙이기 핵심 */
+}
+
+/* FAQ 질문 */
+.faq_question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: transparent;
+    border: none;
+    padding: 20px 20px;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.faq_question:hover {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.07),
+        rgba(255,255,255,0.04)
+    );
+    border-color: rgba(255,255,255,0.15);
+}
+.faq_question h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    transition: color 0.3s ease;
+}
+.faq_item.active .faq_question h3 {
+    color: #e1cc78;
+    animation: textGlowPulse 2.5s ease-in-out infinite;
+}
+@keyframes textGlowPulse {
+    0%, 100% {
+        text-shadow:
+            0 0 4px rgba(244, 211, 94, 0.4),
+            0 0 8px rgba(244, 211, 94, 0.25);
+    }
+    50% {
+        text-shadow:
+            0 0 6px rgba(244, 211, 94, 0.8),
+            0 0 14px rgba(244, 211, 94, 0.6);
+    }
+}
+/* 질문 옆 아이콘 */
+.faq_arrow {
+    width: 14px;  
+    height: auto;
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.faq_item.active .faq_arrow {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+/* FAQ 답변 */
+.faq_answer {
+    max-height: 0;
+    overflow: hidden;
+
+    background: rgba(0,0,0,0.25);
+    padding: 0 24px;
+
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.75);
+
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq_answer.show {
+    max-height: 1000px;
+    padding: 20px 24px;
+}
+
+/* Mobile About Layout */
+@media (max-width: 768px) {
+    .about_card {
+        padding-top: 40px;  
+        padding-bottom: 40px;
+    }
+    .about_title {
+        font-size: 1.8rem;
+    }
+    .about_title::after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.4);
+        margin: 30px auto 0;
+    }
+    .about_text {
+        font-size: 0.85rem;
+    }
+    .about_break {
+        display: block;
+        margin-top: 4px; 
+    }
+    .about_text .commit {
+        display: inline-block;
+        margin-top: 2px;
+    }
+    .about_img img {
+        width: 200px;
+    }
+    .about_hashtag {
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        gap: 10px;
+    }
+    .about_hashtag p {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    .about_toggle_wrap {
+        margin-bottom: 30px;
+    }
+    .round_btn {
+        font-size: 0.8rem;
+        padding: 7px 16px;
+    }
+    .round_btn img {
+        width: 12px;
+    }
+    .about_faq {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .faq_question {
+        padding: 28px 20px;
+    }
+    .faq_question h3 {
+        font-size: 1.05rem;
+    }
+    .faq_answer {
+        font-size: 0.85rem;
+    }
+}

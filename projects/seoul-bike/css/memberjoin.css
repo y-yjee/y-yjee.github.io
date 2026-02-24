@@ -1,0 +1,78 @@
+@charset "utf-8";
+main {
+    width: 1030px;
+    margin: 0 auto;
+    font-family: 'Noto KR', sans-serif;
+}
+main .main_header {
+    padding-top: 35px;
+    padding-bottom: 60px;
+}
+main .main_header h1 {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -0.1em;
+}
+
+main .main_middle {
+    width: 1030px;
+    background: #efefef;
+}
+main .contents {
+    margin: 0 40px;
+    padding: 24px 0;
+}
+main .main_middle .contents h2 {
+    padding-bottom: 16px;
+}
+main .main_middle .contents ul li {
+    line-height: 1rem;
+}
+main .main_middle h2 {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 5px;
+    color: #666666;
+}
+main .main_middle .contents ul li {
+    font-size: 12px;
+    padding-bottom: 7px;
+    display: list-item;
+    list-style-type: circle;
+    margin-left: 1rem;
+}
+main .main_middle .contents ul li span {
+    color: red;
+    font-weight: bold;
+}
+
+main .main_button {
+    padding-top: 60px;
+    padding-bottom: 156px;
+}
+
+main .main_button button {
+    width: 310px;
+    height: 80px;
+    background: #056135;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+}
+main .main_button ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+main .main_button button h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 12px auto;
+    line-height: 1.5rem;
+}
+main .main_button button:hover {
+    color: #056135;
+    background: #fff;
+    border: 1px solid #056135;
+}
