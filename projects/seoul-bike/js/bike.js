@@ -112,8 +112,8 @@ $(document).ready(function(){
       };
       const map = new kakao.maps.Map(mapContainer, mapOption);
 
-      const stationInfoUrl = 'http://openapi.seoul.go.kr:8088/68555572706375623630754e714f44/json/bikeStationMaster/1/1000/';
-      const realtimeStatusUrl = 'http://openapi.seoul.go.kr:8088/68555572706375623630754e714f44/json/stationRealtimeStatus/1/1000/';
+      const stationInfoUrl = 'https://openapi.seoul.go.kr:8088/68555572706375623630754e714f44/json/bikeStationMaster/1/1000/';
+      const realtimeStatusUrl = 'https://openapi.seoul.go.kr:8088/68555572706375623630754e714f44/json/stationRealtimeStatus/1/1000/';
 
       Promise.all([
         fetch(stationInfoUrl).then(res => res.json()),
