@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project, Event Site - Nike</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="#">
+    <link rel="apple-touch-icon" href="#">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/display_none_scrollbar.css">
+    <link rel="stylesheet" href="./assets/css/nike-style.css">
+    <!-- JS 플러그인 파일 -->
+    <script src="./assets/js/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/prefixfree.min.js"></script>
+</head>
+<body>
+    <!-- 배경 Video -->
+    <figure class="video">
+        <video muted autoplay>
+            <source src="./assets/video/nike.mp4" type="video/mp4">
+        </video>
+    </figure> 
+    <!-- /배경 Video -->
+    <!-- Video Button --> 
+    <div class="video_btn">
+        <button>
+            <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </button>
+        <button>
+            <i class="fa fa-pause-circle-o" aria-hidden="true"></i>
+        </button>
+        <button>
+            <i class="fa fa-stop-circle-o" aria-hidden="true"></i>
+        </button>
+    </div> 
+    <!-- /Video Button --> 
+    <!-- Headr 왼쪽 메뉴 -->
+    <header>
+        <h1><a href="#"><img src="./assets/images/logo2.png" alt="나이키로고"></a></h1>
+        <nav>
+            <ul id="gnb">
+                <li>
+                    <a href="#"><em>About</em></a>
+                    <ul class="snb">
+                        <li><a href="#"><em>English</em></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><em>Brand Info</em></a>
+                    <ul class="snb">
+                        <li><a href="#"><em>Sub</em></a></li>
+                        <li><a href="#"><em>Sub</em></a></li>
+                        <li><a href="#"><em>Sub</em></a></li>
+                        <li><a href="#"><em>Sub</em></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><em>Community</em></a>
+                    <ul class="snb">
+                        <li><a href="#"><em>Sub</em></a></li>
+                        <li><a href="#"><em>Sub</em></a></li>
+                        <li><a href="#"><em>Sub</em></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><em>Product Value</em></a>
+                    <ul class="snb">
+                        <li><a href="#"><em>Sub</em></a></li>
+                        <li><a href="#"><em>Sub</em></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><em>Company History</em></a>
+                    <ul class="snb">
+                        <li><a href="#"><em>Sub</em></a></li>
+                    </ul>
+                </li>
+                <!-- Hover 이슈해결 -->
+                <li>
+                    <a href="#"></a>
+                    <ul class="snb">
+                        <li></li>
+                    </ul>
+                </li> 
+                <!-- /Hover 이슈해결 -->
+            </ul>
+        </nav>
+    </header>  
+    <!-- /Headr 왼쪽 메뉴 --> 
+    
+    <!-- 우측상단 SNS -->
+    <nav>
+        <ul id="sns">
+            <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-android" aria-hidden="true"></i></a></li>
+        </ul>
+    </nav>
+    <!-- /우측상단 SNS -->
+
+    <!-- 이미지 텍스트 -->
+    <section class="txt">
+        <p class="p1">
+            50 <em>/ 24</em>
+        </p>
+        <p class="p2">
+            BestQualified <em>AIR MAX</em>
+        </p>
+    </section>
+    <!-- /이미지 텍스트 -->
+
+    <!-- 우측하단 버튼 -->
+    <section id="side">
+        <!-- 이미지 버튼 -->
+        <h3 class="inner">
+            <p>
+                <em>Event &amp; Community</em>
+                <a href="#"><img src="./assets/images/pic1.png" alt="버튼1"></a>
+            </p>
+            <p>
+                <em>News &amp; Notice</em>
+                <a href="#"><img src="./assets/images/pic2.png" alt="버튼2"></a>
+            </p>
+            <p>
+                <em>Product &amp; Review</em>
+                <a href="#"><img src="./assets/images/pic3.png" alt="버튼3"></a>
+            </p>
+        </h3>
+        <!-- /이미지 버튼 -->
+        <!-- 애니메이션 화살표 --> 
+        <h3 class="arrbtn">
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+        </h3> 
+        <!-- /애니메이션 화살표 --> 
+    </section>
+    <!-- /우측하단 버튼 -->
+<script>
+    $('.video_btn button').eq(0).click(function(){
+        $('figure').find('video').get(0).play();
+    });
+
+    $('.video_btn button').eq(1).click(function(){
+        $('figure').find('video').get(0).pause();
+    });
+
+    $('.video_btn button').eq(2).click(function(){
+        // $('figure').find('video').get(0).load();
+        $('figure').find('video').get(0).pause();
+        $('figure').find('video').get(0).currentTime = 0;
+    });
+</script>
+</body>
+</html>

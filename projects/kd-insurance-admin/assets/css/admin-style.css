@@ -1,0 +1,225 @@
+@charset "utf-8";
+body {
+    font-family: 'Pretendard', sans-serif;
+    background: linear-gradient(
+        180deg,
+        #0e1a2b 0%,
+        #13263f 40%,
+        #162f4d 100%
+    );
+    background-attachment: fixed;
+    color: #fff;
+}
+#wrap {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+/* HEADER */
+.demo_header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.demo_header img {
+    width: 80px;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+.demo_header h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+.demo_header p {
+    font-size: 20px;
+    color: #a9c0ff;
+}
+
+/* MAIN */
+.demo_box {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 28px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+/* TAB MENU */
+.tab_menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.tab_item {
+    padding: 18px;
+    text-align: center;
+    background: rgba(255,255,255,0.06);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.tab_item:nth-child(4n) {
+    border-right: none;
+}
+.tab_item:hover {
+    background: rgba(255,255,255,0.1);
+}
+.tab_item.active {
+    background: rgba(255,255,255,0.12);
+    color: #ffffff;
+    font-weight: 600;
+    position: relative;
+}
+.tab_item.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #7fa8d6; 
+}
+
+/* VIDEO */
+.video_wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;   
+    background: linear-gradient(
+      180deg,
+      rgba(12, 32, 58, 0.9),
+      rgba(12, 32, 58, 0.95)
+    );
+}
+.video_wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   
+    display: block;
+}
+
+/* VIDEO BUTTON */
+.video_control {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    font-size: 22px;
+    
+    cursor: pointer;
+    opacity: 0; /* 기본 상태: 아이콘 숨김 */
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+/* hover → 버튼 표시  */
+.video_wrap:hover .video_control {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* 재생 중 + hover 아닐 때 아이콘 숨김 */
+.video_wrap.playing:not(:hover) .video_control {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* VIDEO GUIDE */
+.video_hint {
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    opacity: 0.9;
+    pointer-events: none;
+}
+.pc_text { display: inline; }
+.mo_text { display: none; }
+
+/* 재생 시작하면 가이드 텍스트 숨김 */
+.video_wrap.playing .video_hint {
+     display: none;
+}
+
+/* DESC */
+.video_desc {
+    padding: 30px 40px;
+    color: #d0e1ff;
+    text-align: center;
+    background: rgba(255,255,255,0.06);
+}
+
+/* TABLET */
+@media (max-width:1024px){
+    .tab_menu {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .tab_item:nth-child(2n) {
+        border-right: none;
+    }
+}
+
+/* MOBILE */
+@media (max-width:768px){
+    .demo_header img {
+        width: 60px;
+    }
+    .demo_header h1 {
+        font-size: 28px;
+    }
+    .demo_header p {
+        font-size: 16px;
+    }
+    .tab_menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tab_item {
+        padding: 14px 8px;
+        font-size: 13px;
+    }
+    .video_control {
+        opacity: 1;
+        pointer-events: auto;
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+    }
+    /* ▶ 아이콘 처음부터 노출 */
+    .video_wrap .video_control {
+        opacity: 1;
+    }
+    /* 가이드 텍스트 유지 (재생 전까지만) */
+    .video_hint {
+        display: block;
+        bottom: 8px;
+        right: 5px;
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+    .pc_text { display: none; }
+    .mo_text { display: inline; }
+    
+    .video_wrap.playing .video_control,
+    .video_wrap.playing .video_hint {
+        display: none; /* 재생시 숨김 */
+    }
+    .video_desc {
+        padding: 18px;
+        font-size: 13px;
+    }
+}

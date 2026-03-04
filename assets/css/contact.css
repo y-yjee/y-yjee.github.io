@@ -1,0 +1,317 @@
+@charset "utf-8";
+/* Contact */
+.contact {
+    padding: 80px 0;
+}
+/* Title & Intro Text */
+.contact__title {
+    font-family: 'GmarketSansMedium';
+    font-size: 2.5rem;
+    color: #f1f2f5;
+    text-align: center;
+    margin-bottom: 12px;
+}
+/* Title underline */
+.contact__title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 40px auto 0;
+}
+.contact__text {
+    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 15px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.contact__break {
+    display: inline;
+}
+.contact__deployment {
+    background: rgba(185, 185, 185, 0.15);
+    color: #bd5555; 
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em; 
+}
+
+/* Card Layout */
+.contact__list {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+}
+.contact__item {
+    perspective: 1200px;
+}
+
+/* Flipped state */
+.contact__item.is-flipped .contact__flip {
+    transform: rotateY(180deg);
+}
+/* Flip wrapper */
+.contact__flip {
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    position: relative;
+
+    will-change: transform;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(.4,.2,.2,1);
+}
+
+/* Card Faces (Front / Back) */
+.contact__face {
+    height: 100%;
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 28px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.05),
+        rgba(255,255,255,0.03)
+    );
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.02),
+        10px 10px 10px rgba(176, 176, 176, 0.02);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* Front face */
+.contact__face--front {
+    transform: rotateY(0deg);
+}
+/* Back face */
+.contact__face--back {
+    transform: rotateY(180deg);
+    background: rgba(120, 255, 214, 0.06);
+    border-color: rgba(120, 255, 214, 0.35);
+    position: relative;
+}
+.contact__item.is-flipped .contact__face--back {
+    box-shadow:
+        0 0 8px rgba(120, 255, 214, 0.18),
+        0 0 16px rgba(120, 255, 214, 0.08);
+
+    border-color: rgba(120, 255, 214, 0.4);
+}
+
+/* Icon */
+.contact__icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+.contact__icon img {
+    width: 80%;
+    height: auto;
+    filter: brightness(0.9);
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+/* Click hint ring */
+.contact__icon-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    pointer-events: none;
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(120, 255, 214, 0);
+    transition: opacity 0.3s ease;
+}
+
+/* Label */
+.contact__label {
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 6px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+/* Desktop Hover Interaction */
+@media (hover: hover) {
+    .contact__item:hover .contact__icon {
+        transform: scale(1.1);
+        border-color: rgba(120, 255, 214, 0.55);
+    }
+    .contact__item:hover .contact__icon-ring {
+        opacity: 1;
+        box-shadow:
+            0 0 6px rgba(120, 255, 214, 0.35),
+            0 0 12px rgba(120, 255, 214, 0.2);
+    }
+    .contact__item:hover .contact__icon img {
+        transform: scale(1.05);
+    }
+    .contact__item:hover .contact__label {
+        color: rgba(120, 255, 214, 0.85);
+        transform: translateY(2px);
+        text-shadow:
+            0 0 6px rgba(120, 255, 214, 0.35);
+    }
+    .contact__item.is-flipped:hover .contact__icon,
+    .contact__item.is-flipped:hover .contact__label {
+        transform: none;
+        text-shadow: none;
+    }
+}
+
+/* Close Button */
+.contact__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+
+    transition: background 0.25s ease;
+}
+.contact__close:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* Back Content */
+.contact__value {
+    font-size: 0.95rem;
+    color: #f1f2f5;
+    word-break: break-word;
+}
+
+/* GitHub button */
+.contact__link {
+    cursor: pointer;
+    padding: 12px 22px;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.75);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+.contact__link:hover {
+    background: #1a1a1a;
+    color: #ffffff;
+    font-weight: 600;
+    border-color: #2a2a2a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+.contact__link:active {
+    transform: translateY(0);
+    background: #141414;
+}
+.contact__link:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.25);
+}
+
+
+/* Mobile Contact Layout */
+@media (max-width: 768px) {
+    .contact__title {
+        font-size: 1.8rem;
+    }
+    .contact__title::after {
+        width: 40px;
+        margin: 30px auto 0;
+    }
+    .contact__description {
+        font-size: 0.85rem;
+    }
+    .contact__break {
+        display: block;
+        margin-top: 4px;
+    }
+    .contact__highlight {
+        display: inline-block;
+        margin-top: 2px;
+    }
+    .contact__list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .contact__value {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile (No Hover Environment) */
+@media (hover: none) {
+    .contact__icon {
+        border-color: rgba(120, 255, 214, 0.45);
+        box-shadow: 0 0 6px rgba(120, 255, 214, 0.22);
+    }
+    .contact__icon img {
+        transform: scale(1.05);
+        filter: brightness(1.05);
+    }
+    .contact__label {
+        color: rgba(120, 255, 214, 0.75);
+        text-shadow: 0 0 6px rgba(120, 255, 214, 0.25);
+    }
+    .contact__icon-ring {
+        opacity: 1;
+        box-shadow:
+            0 0 4px rgba(120, 255, 214, 0.25),
+            0 0 8px rgba(120, 255, 214, 0.15);
+    }
+}

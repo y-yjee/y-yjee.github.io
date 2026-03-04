@@ -1,0 +1,361 @@
+@charset "utf-8";
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.w1300 {
+    width: 1300px;
+    margin: 0 auto;
+}
+#wrap {
+    width: 100%;
+}
+
+/* SNB Menu */
+aside {
+    height: 55px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 700;
+}
+.top_sub {
+    padding: 0 48px 0 52px;
+    /* 플렉스 */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.top_sub p:nth-child(1){
+    line-height: 55px;
+    margin-left: 410px;
+}
+.top_sub p:nth-child(2){
+    line-height: 55px;
+    color: #fff1b4;
+    cursor: pointer;
+    margin-left: -365px;
+}
+.top_sub p:nth-child(2) img {
+    vertical-align: middle;
+    margin-top: -4px;
+}
+.top_sub p:nth-child(3) {
+    margin-top: 18px;
+    cursor: pointer;
+}
+.top_sub p:nth-child(3) img {
+    vertical-align: middle;
+}
+
+/* LNB Menu */
+.lnb_all {
+    border-bottom: 1px solid #c9c9c9;
+}
+.root_lnb {
+    height: 72px;
+    padding-top: 24px;
+    padding-left: 536px;
+    /* 플렉스 */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.root_lnb .lnb {
+    display: flex;
+    padding-top: 4px;
+}
+.root_lnb .lnb li {
+    margin-left: 12px;
+}
+
+/* GNB Menu */
+.gnb_all {
+    border-bottom: 1px solid #c9c9c9;
+}
+.global {
+    line-height: 54px;
+    /* 햄버거 + gnb + sub 플렉스 */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.global .gnb {
+    /* gnb 메뉴 5개 플렉스 */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.global .gnb li {
+    margin-right: 52px;
+}
+.global .sub {
+    /* sub 메뉴 3개 플렉스 */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.global .sub li {
+    margin-left: 28px;
+}
+
+/* Slider */
+.slider {
+    min-width: 100%;
+    margin: 0 auto;
+}
+.slider img {
+    width: 100%;
+}
+
+/* Contents */
+/* Section1 */
+.md_pick {
+    margin-top: 142px;
+    /* 플렉스 */
+    display: flex;
+}
+.slider_video {
+    font-size: 0;       /* 인라인 요소 여백 제거 */
+    line-height: 0;
+}
+.slider_video video {
+    width: 800px;
+    display: block;
+}
+.md_pick h3 {
+    text-align: center;
+    padding-top: 35px;
+}
+.md_pick_area {
+    margin-top: 32px;
+    /* 플렉스 */
+    display: flex;
+    /* 포지션 */
+    position: relative;
+    left: -60px;
+}
+.md_pick_area ul {
+    /* 플렉스 */
+    display: flex;
+}
+.md_pick_area ul li {
+    margin-right: 10px;
+    box-shadow: 1px 1px 3px #ccc;
+    position: relative;
+}
+.md_pick_area ul li:last-child {
+    margin-right: 0 !important;
+}
+
+/* 셀로판지 */
+.md_pick_area ul li a::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #616161;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.md_pick_area ul li a:hover::before {
+    opacity: 0.6;
+}
+
+.md_up {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    /* 로딩시 안보이도록 코딩 */
+    display: none;
+}
+.md_up .p_name {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.md_up .p_price {
+    font-weight: bold;
+}
+.md_up .p_blank {
+    margin-top: 40px;
+    font-size: 14px;
+    text-decoration: underline;
+    color: #ccc;
+}
+.md_pick_area+p {
+    padding-top: 28px;
+    text-align: right;
+}
+.md_pick_area+p img {
+    cursor: pointer;
+}
+
+/* Section2 */
+.real_title {
+    margin-top: 150px;
+    background-color: #f5f5f5;
+    font-size: 22px;
+    color: #5c5c5c;
+}
+.real_time {
+    padding-left: 100px;
+    padding-top: 80px;
+    padding-bottom: 88px;
+    /* 플렉스 */
+    display: flex;
+    align-items: center;
+}
+.real_time ul {
+    margin-right: 76px;
+    text-align: center;
+}
+.real_time ul li {
+    margin-bottom: 20px;
+}
+.real_time ul li:nth-child(1){
+    margin-bottom: 36px;
+}
+.real_time ul li:nth-child(5){
+    margin-bottom: 82px;
+}
+.real_time ul li:nth-child(6) img {
+    cursor: pointer;
+}
+
+/* Section3 */
+.caxa {
+    margin-top: 124px;
+    padding-left: 84px;
+}
+.caxa h2 {
+    text-align: center;
+    margin-bottom: 44px;
+}
+.caxa .caxa_sns {
+    /* 플렉스 */
+    display: flex;
+}
+.caxa .caxa_sns ul:first-child {
+    /* 플렉스 */
+    display: flex;
+    flex-flow: column wrap;
+}
+.caxa .caxa_sns ul:first-child li:first-child {
+    margin: 0 5px 5px 0;
+}
+.caxa .caxa_sns ul:nth-child(2){
+    margin-right: 5px;
+}
+.caxa .caxa_sns ul:last-child {
+    /* 플렉스 */
+    display: flex;
+    flex-flow: row wrap;
+}
+.caxa .caxa_sns ul:last-child li {
+    margin: 0 5px 5px 0;
+}
+.caxa .caxa_sns ul:last-child li:nth-child(3),
+.caxa .caxa_sns ul:last-child li:nth-child(6) {
+    margin-right: 0 !important;
+}
+.caxa .caxa_sns ul:last-child li:nth-child(4),
+.caxa .caxa_sns ul:last-child li:nth-child(5),
+.caxa .caxa_sns ul:last-child li:nth-child(6) {
+    margin-bottom: 0 !important;
+}
+.caxa p {
+    text-align: right;
+    padding-right: 80px;
+    margin-top: 28px;
+}
+.caxa p img {
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    margin-top: 106px;
+    background-color: #242424;
+    padding-top: 24px;
+    padding-bottom: 54px;
+    line-height: 1.5;
+}
+.footer_information {
+    padding-left: 72px;
+    padding-right: 68px;
+    /* 플렉스 */
+    display: flex;
+    justify-content: space-between;
+}
+.footer_gnb {
+    color: #eeeef0;
+    font-size: 14px;
+    margin-bottom: 20px;
+    /* 플렉스 */
+    display: flex;
+}
+.footer_info {
+    font-size: 12px;
+    color: #9a9c9b;
+    font-weight: 400;
+}
+.footer_info .footer_escrow {
+    margin-top: 26px;
+    /* 플렉스 */
+    display: flex;
+}
+.footer_info .footer_escrow span {
+    display: inline-block;
+    margin-right: 46px;
+}
+.footer_info .footer_escrow span img {
+    opacity: 0.3;
+}
+.footer_info>p:last-child {
+    margin-top: 32px;
+}
+.footer_contact {
+    color: #cccdd1;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.footer_contact dl:first-child dt+dd {
+    font-size: 22px;
+}
+.footer_contact dl:first-child dt+dd+dd {
+    font-size: 12px;
+    font-weight: 300;
+    color: #a8a9ad;
+    margin-bottom: 42px;
+}
+.footer_contact dl:last-child {
+    line-height: 2.5;
+}
+.footer_contact dl:last-child dt {
+    font-size: 11px;
+    font-weight: 700;
+}
+.footer_contact dl:last-child dt+dd {
+    font-size: 18px;
+    font-weight: 500;
+}
+.footer_contact dl:last-child dt+dd+dd {
+    font-size: 13px;
+    color: #a4a5aa;
+}
+
+/* 스크립트 사용 DOM의 스타일 */
+.alert {
+    position: fixed;
+    left: 50%;
+    top: 2%;
+    z-index: 99999999;
+    transform: translateX(-50%);
+    display: none;
+}
+
+

@@ -1,0 +1,92 @@
+main{
+    width: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.info_use{
+    margin: 0 auto;
+    width: 1060px;
+}
+.info_use h2{
+    font-size: 1.875rem;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 74px 0 60px 0;
+}
+.flex_box .ticket{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+.flex_box .ticket li{
+    width: 523px;
+    height: 250px !important;
+    padding: 28px;
+    color: #fff;
+    background: #43a257;
+    padding-top: 160px;
+    /* 포지션 위치기준값 */
+    position: relative;
+    cursor: pointer;
+}
+.flex_box .ticket li h3{
+    font-size: 1.5625rem;
+    margin-bottom: 12px;
+}
+.flex_box .ticket li img{
+    width: 80px;
+    height: 60px;
+    /* 포지션 */
+    position: absolute;
+    top: 27px;
+    right: 28px;
+    z-index: 1;
+}
+.gift{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 84px;
+}
+.gift li{
+    padding-top: 92px !important;
+    width: 523px;
+    height: 180px;
+    padding: 28px;
+    background: #ededed;
+    cursor: pointer;
+    /* 포지션 위치기준값 */
+    position: relative;
+}
+.gift li h3{
+    font-size: 1.5625rem;
+    margin-bottom: 12px;
+}
+.gift li img{
+    width: 80px;
+    height: 60px;
+    /* 포지션 */
+    position: absolute;
+    top: 16px;
+    right: 17px;
+    z-index: 1;
+}
+.etc{
+    width: 450px;
+    height: 47px;
+    line-height: 47px;
+    margin-left: 305px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 198px;
+    cursor: pointer;
+}
+.etc li{
+    text-align: center;
+    font-size: 1.125em;
+    color: #fff;
+    background: #3d5567;
+    width: 218px;
+}
+.etc li img{
+    margin-top: 12.5px;
+    margin-right: 2px;
+}

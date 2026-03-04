@@ -1,0 +1,363 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 공용 CSS = 모바일 퍼스트 */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+/* Safe Area */
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+/* 구분선 스타일 */
+.divider {
+    max-width: 1500px;
+    margin: 0 auto;
+    height: 2px;
+    background: #eee;
+    margin-top: 80px;
+}
+/* 짧은 구분선 스타일 */
+.m1_divider {
+    width: 200px;
+    margin: 0 auto;
+    height: 2px;
+    background: #eee;
+    margin-top: 100px;
+}
+.m2_divider {
+    width: 200px;
+    margin: 0 auto;
+    height: 2px;
+    background: #eee;
+    margin-top: 100px;
+}
+/* 공통 섹션 타이틀 + 설명 */
+.section_intro {
+    margin-top: 80px;
+    text-align: center;
+}
+.section_intro .sec_title {
+    font-size: 1.875rem;
+    margin-bottom: 20px;
+}
+.section_intro .desc {
+    color: #616161;
+    line-height: 2;
+    text-align: center;
+}
+.section_intro .desc_main {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.section_intro .desc_sub {
+    display: block;
+    color: #757575;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+/* 줄바꿈 제어 */
+.only_pc {
+    display: none;
+}
+.only_mo {
+    display: inline;
+}
+
+
+/* Header */
+header {
+    padding: 18px 3%;
+}
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+.logo img {
+    width: 24px;      
+    height: auto;
+}
+.logo span {
+    font-family: 'GmarketSansMedium';
+    font-size: 1rem;
+    color: #33485A;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    top: 1px;
+}
+nav {
+    margin-left: auto;
+}
+.gnb {
+    width: 100%;
+    background: #3f51b5;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 99999;
+    /* 로딩시 안보이도록 코딩 */
+    display: none;
+}
+.gnb li {
+    border-bottom: 1px solid #303f9f;
+}
+.gnb li a {
+    display: block;
+    font-size: 0.875rem;
+    padding: 14px 0 14px 5%;
+}
+/* Hamberger Toggle */
+.menu_toggle_btn {
+    width: 20px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+.menu_toggle_btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #33485A;
+}
+.menu_toggle_btn span:nth-child(2) {
+    margin: 5px 0;
+}
+
+
+/* Slider */
+.slider_img .slide_gallery {
+    width: 100%;
+}
+.slider_img .slide_gallery img {
+    width: 100%;
+}
+
+
+/* DESTINATIONS (목적지) */
+.destinations_section .sec_title {
+    color: #3f51b5;
+}
+/* City List */
+.city_section {
+    margin-top: 60px;
+}
+.city_list li {
+    margin-top: 45px;
+    text-align: center;
+}
+.city_list li:nth-child(1) {
+    margin-top: 0;
+}
+.city_list li img {
+    width: 100px;
+    height: 100px;
+}
+.city_list li h3 {
+    margin: 30px 0 20px;
+}
+.city_list li p {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.875rem;
+    color: #616161;
+    line-height: 1.5;
+}
+
+
+/* LANDMARKS (랜드마크) */
+.landmarks_section .sec_title {
+    color: #c35c7b;
+}
+/* Landmarks List */
+.land_section {
+    margin-top: 60px;
+}
+.land_list li {
+    width: 100%;
+}
+.land_list li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.land_list li img {
+    width: 100%;
+}
+/* 이미지 정보 효과 */
+.land_list li a {
+    position: relative;
+}
+/* 셀로판지 */
+.land_list li a::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #777777;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s;
+}
+/* 호버 시 셀로판지 나타남 */
+.land_list li a:hover::before {
+    opacity: 0.7; 
+}
+/* 정보 텍스트 */
+.land_list li div {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    z-index: 200;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.land_list li div h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.land_list li div span {
+    font-size: 0.6875rem;
+    color: #fff;
+}
+/* 정보 텍스트 이동 효과 */
+.land_list li a:hover div {
+    opacity: 1;
+    transform: translateY(30px); 
+}
+
+
+/* TRAVEL STYLE (여행 스타일) */
+.travel_st_section .sec_title {
+    color: #52b177;
+}
+/* Travel Style List */
+.travel_section {
+    margin-top: 60px;
+}
+.travel_list li {
+    width: 100%;
+    margin-top: 48px;
+}
+.travel_list li:nth-child(1) {
+    margin-top: 0;
+}
+.travel_list li img {
+    width: 100%;
+}
+.travel_list li span {
+    display: block;
+    font-size: 0.75rem;
+    color: #9e9e9e;
+    margin-top: 12px;
+    padding-left: 4px;
+}
+.travel_list li h3 {
+    color: #424242;
+    padding-left: 4px;
+    margin-top: 8px;
+    line-height: 1.6;
+}
+
+/* PLAN YOUR TRIP (여행 계획 세우기) */
+.trip_section .sec_title {
+    color: #7052b1;
+}
+/* Form & Button */
+.form_section {
+    margin-top: 60px;
+    padding: 0 16px;
+}
+/* FORM – 공통 스타일 */
+.form_box input,
+.form_box select,
+.form_box textarea {
+    width: 100%;
+    padding: 14px 0;
+    border: none;
+    border-bottom: 1px solid #d0d0d0;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #5E4BBE;
+    background: transparent;
+    transition: border-color 0.3s ease;
+}
+.form_box input:focus,
+.form_box select:focus,
+.form_box textarea:focus {
+    outline: none;
+    border-bottom: 1px solid #5E4BBE;
+}
+.form_box input::placeholder,
+.form_box textarea::placeholder {
+    color: #9e9e9e;
+}
+.form_box fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.form_left,
+.form_right {
+    display: flex;
+    flex-direction: column;
+}
+.form_box select {
+    cursor: pointer;
+}
+.form_left select,
+.form_right input,
+.form_right textarea {
+    margin-bottom: 32px;
+}
+/* 버튼 */
+.send_btn {
+    margin-top: 20px;
+    text-align: right;
+}
+.send_btn button {
+    padding: 12px 24px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    background: #5E4BBE;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.send_btn button:hover {
+    background: #4C3AA3;
+    transform: translateY(-2px);
+}
+
+
+/* Footer */
+footer {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+footer iframe {
+    width: 100%;
+    height: 320px;
+}
+footer p {
+    margin: 20px 0;
+    color: #000;
+    text-align: center;
+    font-size: 0.75rem;
+}

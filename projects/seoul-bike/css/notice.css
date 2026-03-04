@@ -1,0 +1,271 @@
+@charset "utf-8";
+/* 공통 코딩 */
+body, html {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 100%;
+}
+/* 경고창 */
+.alert{
+    position: fixed;
+    left: 50%;
+    top: 10%;
+    z-index: 999999;
+    transform: translateX(-50%);
+    display: none;
+}
+/* line */
+.line{
+    border-bottom: 1px solid #ededed;
+}
+/* 전체 너비 */
+#wrap{
+    max-width: 1905px;
+    margin: 0 auto;
+}
+
+/* safe area */
+.w1560{
+    width: 1560px;
+    margin: 0 auto;    
+}
+
+/* Header */
+.top_menu{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    line-height: 50px;
+}
+.top_menu .language {
+    height: 28px;
+    margin-top: 11px;
+}
+.top_list{
+    display: flex;
+}
+.top_list li{
+    margin-left: 15px;
+    font-weight: bold;
+}
+/* GNB Header */
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+.header h1{
+    padding-top: 18px;
+}
+.header h1 img:first-child{
+    height: 39px;
+    padding-right: 10px;
+}
+.header h1 img:last-child{
+    width: 200x;
+    height: 39px;
+}
+.gnb_list{
+    display: flex;
+    font-size: 1.125rem;
+}
+.gnb_list li{
+    margin-left: 50px;
+    line-height: 70px;
+    font-weight: bold;
+}
+
+
+/* Main */
+main {
+    margin-bottom: 50px;
+}
+.w1030 {
+    width: 1030px;
+    margin: 0 auto;
+}
+
+.title {
+    margin-top: 48px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.title h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+.search {
+     margin-top: 50px;
+}
+/* 검색창 */
+.search form {
+    width: 90%;
+    margin: 0 auto;
+    transform: translateX(50px);
+}
+.search form input[type="text"] {
+    width: 80%;
+    height: 44px;
+    padding: 5px 10px;
+}
+.search form input[type="button"] {
+    width: 68px;
+    height: 44px;
+    padding: 5px 20px;
+    margin-left: 5px;
+    color: #fff;
+    background-color: rgb(67, 162, 87);
+    border: none ;
+    cursor: pointer;
+}
+/* 공지사항 */
+.board {
+    margin-top: 28px;
+}
+/* 테이블 하단 마진 */
+.board table {
+    margin-bottom: 16px;
+}
+/* 테이블 스타일 */
+.notice_list_all {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+
+.notice_list_all th, .notice_list_all td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+/* thead */
+.notice_title {
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+
+.notice_title th {
+    text-align: center;
+}
+.notice_list_all tbody tr td {
+    font-weight: 500;
+}
+.notice_list_all strong {
+    color: blue;
+    font-weight: 700;
+}
+/* 공지사항 제목 */
+.notice_list_all tbody tr td:nth-child(1) {
+    font-size: 14px;
+}
+/* 공지사항 날짜 */
+.notice_list_all tbody tr td:nth-child(2) {
+    color: rgb(115,115,115);
+    font-size: 12px;
+    text-align: left;
+}
+/* 공지사항 목록 */
+.board ul {
+    width: 30%;
+    margin: 30px auto 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+/* 목록 배경(공간) 넣기 */
+.board ul li a {
+    display: block;
+    width: 35px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
+/* 1번 페이지 기본 설정 */
+.board ul li.active a {
+    background-color: rgb(102, 102, 102);
+    color: #fff;
+    border-radius: 4px; 
+}
+/* 호버 */
+.board ul li a:hover {
+    display: block;
+    width: 35px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    background-color: rgb(102, 102, 102);
+    color: #fff;
+    border-radius: 4px; 
+}
+
+
+
+
+/* Footer */
+footer{
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #ededed;
+    font-size: 0.875rem;
+    margin: 0 auto;
+}
+.footer{
+    width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+.footer_info{
+    width: 880px;
+}
+.footer_info p {
+    color: #222;
+    line-height: 1.5625rem;
+    letter-spacing: 0.5px;
+}
+.footer_list{
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    margin: 30px 0 20px 0;
+}
+.footer_list li {
+    padding-left: 36px;
+}
+.footer_list li:first-child {
+    padding-left: 0;
+}
+.footer_img{
+    margin-right: 48px;
+}
+.snslink{
+    margin: 30px 0 20px 0;
+    width: 132px;
+    display: flex;
+}
+.footer_img p img{
+    width: 105px;
+    height: 78px;
+    margin: -20px -10px 10px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
