@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         /* Mobile tap toggle */
         card.addEventListener("click", (e) => {
             if (!isMobile()) return;
-            if (card.querySelector(".projects__media--video")) return;
+            if (e.target.closest("a")) return;
 
             e.preventDefault();
 
