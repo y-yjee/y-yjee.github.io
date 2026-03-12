@@ -1,0 +1,175 @@
+/* ==================================================
+   bxSlider v4.2.12 – CUSTOMIZED FOR RWD PROJECT
+   - Dark background friendly arrows
+   - Mobile pager position fix
+   - Original structure preserved for class use
+   ================================================== */
+
+/** RESET AND LAYOUT
+=================================== */
+.bx-wrapper {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 0;
+  zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+
+  /* custom */
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+
+ul.bxslider {
+  list-style: none;
+}
+
+.bx-viewport {
+  /* fix chrome flicker */
+  -webkit-transform: translateZ(0);
+}
+
+/** PAGER
+=================================== */
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.bx-wrapper .bx-pager {
+  font-size: 0;
+}
+
+.bx-wrapper .bx-pager-item {
+  display: inline-block;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  text-indent: -9999px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:hover {
+  background: #ffffff;
+}
+
+/** DIRECTION CONTROLS (ARROWS)
+=================================== */
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  z-index: 9999;
+  text-indent: -9999px;
+  outline: none;
+  background: none; /* remove image sprite */
+}
+
+.bx-wrapper .bx-prev {
+  left: 20px;
+}
+
+.bx-wrapper .bx-next {
+  right: 20px;
+}
+
+/* text arrows */
+.bx-wrapper .bx-prev::after {
+  content: '◀';
+  font-size: 30px;
+  color: #ffffff;
+  opacity: 0.1;
+  text-indent: 0;
+  display: block;
+  line-height: 48px;
+}
+
+.bx-wrapper .bx-next::after {
+  content: '▶';
+  font-size: 30px;
+  color: #ffffff;
+  opacity: 0.1;
+  text-indent: 0;
+  display: block;
+  line-height: 48px;
+}
+
+.bx-wrapper .bx-controls-direction a:hover::after {
+  opacity: 0.7;
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+
+/** AUTO CONTROLS (START / STOP)
+=================================== */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+
+/** IMAGE CAPTION
+=================================== */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/** MOBILE FIX
+=================================== */
+@media screen and (max-width: 768px) {
+  .bx-wrapper {
+    overflow: visible;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+  }
+  .bx-wrapper .bx-pager {
+    position: relative;
+    margin-top: 8px;
+    text-align: center;
+  }
+  .display_section {
+    margin-top: 40px;
+  }
+  .bx-wrapper .bx-prev,
+  .bx-wrapper .bx-next {
+    display: none;
+  }
+  .bx-wrapper .bx-pager.bx-default-pager a {
+    width: 6px;
+    height: 6px;
+    margin: 0 4px;
+  }
+}

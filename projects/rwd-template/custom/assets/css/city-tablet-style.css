@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* 태블릿 미디어 쿼리 768px 이상 */
+@media screen and (min-width:768px){
+    /*  태블릿 Header */
+    header {
+        padding: 18px 5%;
+    }
+    .logo img {
+        width: 28px;      
+    }
+    .logo span {
+        font-size: 1.125rem;
+    }
+    /* 태블릿 GNB */
+    .gnb {
+        /* 속성값 초기화 */
+        width: auto;
+        background: none;
+        position: static;
+        display: flex;
+        align-items: center;
+    }
+    .gnb li {
+        /* 속성값 수정 */
+        border-bottom: 0;
+        /* 속성값 추가 */
+        margin-left: 20px;
+    }
+    .gnb li:hover {
+        font-weight: 600;
+    }
+    .gnb li a {
+        padding: 5px 0 0 0;
+    }
+    /* Hamberger Toggle */
+    .menu_toggle_btn span {
+        display: none;
+    }
+
+
+    /* 태블릿 DESTINATIONS (목적지) */
+    /* 태블릿 City List */
+    .city_section {
+        margin-top: 80px;
+    }
+    .city_list {
+        /* 속성 추가 */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 4%;   /* 세로 40px / 가로 4% */
+    }
+    .city_list li {
+        width: 48%;       
+        margin: 0;  
+        /* 값 수정 */
+        margin-top: 0;
+        text-align: center;      
+    }
+    .city_list li:nth-child(1) {
+        /* 속성 추가 */
+        margin-left: 0;
+    }
+
+
+    /* 태블릿 LANDMARKS (랜드마크) */
+    /* Landmarks List */
+    .land_section {
+        margin-top: 80px;
+    }
+    .land_list {
+        /* 속성 추가 */
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .land_list li {
+        /* 값 수정 */
+        width: 50%;
+    }
+    
+
+    /* 태블릿 TRAVEL STYLE (여행 스타일) */
+    /* Travel Style List */
+    .travel_section {
+        margin-top: 80px;
+    }
+    .travel_list {
+        /* 속성 추가 */
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .travel_list li {
+        /* 값 수정 */
+        /* 768-40 = 728/3 = 242.6666666666667 */
+        width: 242.6666666666667px;
+        /* (242.6666666666667/768)*100 = 31.597222222222225 */
+        width: 31.597222222222225%;
+        margin-left: 20px;
+        /* (20/768)*100 = 2.604166666666667 */
+        margin-left: 2.604166666666667%;
+        /* 값 수정 */
+        margin-top: 0;
+    }
+    .travel_list li:nth-child(1) {
+        /* 속성 추가 */
+        margin-left: 0;
+    }
+
+    
+    /* 태블릿 PLAN YOUR TRIP (여행 계획 세우기) */
+    /* 태블릿 Form & Button */
+    .form_section {
+        margin-top: 80px;
+    }
+    .form_box fieldset {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .form_right textarea {
+        height: 46px;
+        resize: none;
+        transition: height 0.3s ease;
+    }
+    .form_right textarea:focus {
+        height: 120px;
+    }
+
+} /* end of tablet */

@@ -1,0 +1,327 @@
+@charset "utf-8";
+/* Home */
+.home {
+    min-height: 500px;
+    padding: 60px 0;
+    color: #fff;
+}
+.home__inner {
+    display: flex;
+    gap: 40px;
+}
+/* Layout Ratio */
+.home__intro { flex: 6; }
+.home__skills { flex: 4; }
+/* Common Card Style */
+.home__card {
+    height: 100%;
+    min-height: 420px;
+    border-radius: 20px;
+    padding: 36px;
+    box-sizing: border-box;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04),
+        10px 10px 10px rgba(176, 176, 176, 0.02);
+}
+
+
+/* Home Intro */
+.home__card--intro {
+    background: url(../images/typing_bg.jpg) center / cover no-repeat;
+    background-color: rgba(24,24,24,0.85);
+    backdrop-filter: blur(6px);
+}
+/* Typing */
+.home__typing {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto 24px;
+    text-align: center;
+    position: relative;
+}
+.home__typing-line {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+/* Typing Line */
+.home__typing-line:first-child {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    min-height: 3.2rem;
+}
+.home__typing-line:last-child {
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-size: 1.25rem;
+    color: #33c3ff;
+    min-height: 2rem;
+}
+.home__tagline {
+    text-align: center;
+    font-size: 1.05rem;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    color: rgba(255,255,255,0.1);
+}
+/* Keywords */
+.home__keywords {
+    text-align: center;
+    margin-top: 35px;
+}
+.home__keywords-guide {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+}
+.home__keywords-list {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.home__keywords-button {
+    all: unset;
+    display: inline-block;
+
+    padding: 8px 16px;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(255,255,255,0.06);
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.4),
+        inset 0 0 0 1px rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+.home__keywords-button--active {
+    background: rgba(51,195,255,0.25);
+    color: #e9f8ff;
+    box-shadow:
+        0 10px 24px rgba(51,195,255,0.25),
+        inset 0 0 0 1px rgba(51,195,255,0.6);
+    transform: translateY(-4px);
+}
+.home__keywords-desc {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #9adfff;
+    min-height: 1.2em;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.home__keywords-desc--show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Skills */
+.home__card--skills {
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+.home__skills-title {
+    font-family: 'GmarketSansMedium';
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+/* Skills Tabs */
+.home__skills-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.home__skills-tab {
+    flex: 1;
+    padding: 8px 0;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.home__skills-tab--active {
+    background: #1a1a1a;
+    color: #ffffff;
+    font-weight: 600;
+    border: 1px solid #2a2a2a;
+}
+/* Skills Panel */
+.home__skills-panel {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+.home__skills-panel--active {
+    display: grid;
+}
+.home__skills-item {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+.home__skills-item:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-2px);
+}
+.home__skills-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+.home__skills-item span {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Keyword Ripple Effect */
+.home__keywords-button {
+    position: relative;
+    overflow: hidden;
+}
+.home__keywords-button .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(0);
+    animation: home-keyword-ripple 0.6s ease-out;
+    pointer-events: none;
+}
+@keyframes home-keyword-ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+/* Skills Ripple effect */
+.home__skills-tab {
+    position: relative;
+    overflow: hidden;
+}
+.home__skills-tab .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: home-skills-ripple 0.6s linear;
+    pointer-events: none;
+}
+@keyframes home-skills-ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+
+/* Mobile Home Layout */
+@media (max-width: 768px) {
+    .home {
+        padding: 40px 0px;
+    }
+    .home__inner {
+        display: block;
+    }
+    .home__intro {
+        width: 100%;
+        box-sizing: border-box;
+        padding-bottom: 30px;
+    }
+    .home__card--intro {
+        min-height: 520px;
+        margin: 0 auto;
+    }
+    
+    /* Typing */
+    .home__typing {
+        max-width: 100%;
+        padding: 0 10px;
+        text-align: center;
+    }
+    .home__typing-line {
+        display: block;
+        white-space: normal;
+        word-break: keep-all;
+        overflow: hidden;
+    }
+    .home__typing-line:first-child {
+        font-size: clamp(1.6rem, 5vw, 1.8rem);
+        line-height: 1.3;
+        height: calc(1.3em * 2);
+        max-width: 18ch;
+        margin: 0 auto 12px auto;
+    }
+    .home__typing-line:last-child {
+        font-size: clamp(0.95rem, 4vw, 1rem);
+        line-height: 1.5;
+        height: calc(1.5em * 2);
+        max-width: 16ch;
+        margin: 0 auto;
+    }
+    .home__tagline {
+        font-size: 0.875rem;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    /* Keywords */
+    .home__keywords {
+        margin-top: 0;
+    }
+    .home__keywords-guide {
+        font-size: 0.75rem;
+        margin-bottom: 15px;
+        opacity: 0.6;
+    }
+    .home__keywords-list {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .home__keywords-button {
+        font-size: 0.875rem;
+        padding: 7px 14px;
+    }
+    .home__keywords-desc {
+        font-size: 0.9rem;
+        margin-top: 30px;
+        line-height: 1.4;
+    }
+
+    /* Skills */
+    .home__skills-panel {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+    .home__skills-tab {
+        font-size: 0.75rem;
+    }
+    .home__skills-item {
+        padding: 12px 8px;
+    }
+    .home__skills-item img {
+        width: 44px;
+        height: 44px;
+    }
+    .home__skills-item span {
+        font-size: 0.75rem;
+    }
+}

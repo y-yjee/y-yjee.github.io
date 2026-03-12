@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* PC 미디어 쿼리 1132px 이상 */
+@media screen and (min-width:1132px){
+    /* PC 섹션 타이틀 + 설명 */
+    .section_intro .sec_title {
+        font-size: 40px;
+    }
+    .section_intro .desc {
+        max-width: 1000px;   
+        text-align: left;
+        line-height: 2;
+        position: relative;
+        padding-left: 24px;   
+    }
+    /* 데코 세로 막대 */
+    .section_intro .desc::before {
+        content: "";
+        position: absolute;
+        top: 4px;               
+        left: 0;
+        z-index: 1;
+        width: 2px;
+        height: 100%;         
+        background: #e0e0e0;
+    }
+    .section_intro .desc_main {
+        margin-bottom: 0;
+    }
+    .section_intro .desc_sub {
+        font-size: 0.95rem;
+        line-height: 1.9;
+    }
+    /* PC 전용 줄 */
+    .only_pc {
+        display: inline;
+    }
+    .only_mo {
+        display: none;
+    }
+    /* 짧은 구분선 스타일 */
+    .m2_divider {
+        display: none;
+    }
+
+    /* PC Header */
+    .logo img {
+        width: 32px;      
+    }
+    .logo span {
+        font-size: 1.25rem;
+    }
+
+    /* PC DESTINATIONS (목적지) */
+    .destinations_section {
+        /* 속성값 수정 */
+        text-align: left;
+    }
+    .destinations_section>div {
+        display: block;
+    }
+    /* PC City List */
+    .city_section {
+        margin-top: 100px;
+    }
+    .city_list {
+        gap: 40px 2%;         
+    }
+    .city_list li {
+        width: 23.5%;         
+    }
+
+
+    /* PC LANDMARKS (랜드마크) */
+    .landmarks_section {
+        /* 속성값 수정 */
+        text-align: left;
+    }
+    .landmarks_section>div {
+        display: block;
+    }
+    /* Landmarks List */
+    .land_section {
+        margin-top: 100px;
+    }
+    .land_list li {
+        /* 값 수정 */
+        width: 25%;
+    }
+    .land_list li div h3 {
+        font-size: 1.875rem;
+        margin-bottom: 15px;
+    }
+    .land_list li div span {
+        font-size: 1rem;
+    }
+
+
+    /* PC TRAVEL STYLE (여행 스타일) */
+    .travel_wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .travel_st_section {
+        width: 35%;
+        margin-top: 100px;
+        /* 속성값 수정 */
+        text-align: left;
+    }
+    .travel_st_section>div {
+        display: block;
+    }
+    /* Travel Style List */
+    .travel_section {
+        width: 65%;
+        margin-top: 100px; 
+    } 
+    .travel_list {
+        width: 844px;
+        /* (844/1132)*100 = 74.55830388692578 */
+        width: 74.55830388692578%;
+    }
+    .travel_list li {
+        /* (844px) */
+        /* 844-40 = 804/3 = 268 */
+        width: 268px;
+        /* (268/844)*100 = 31.753554502369667 */
+        width: 31.753554502369667%;
+        margin-left: 20px;
+        /* (20/844)*100 = 2.3696682464454977 */
+        margin-left: 2.3696682464454977%;
+        /* 값 수정 */
+        margin-top: 0;
+    }
+    .travel_list li span {
+        margin: 10px 0;
+    }
+
+    
+    /* PC PLAN YOUR TRIP (여행 계획 세우기) */
+    .trip_wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .trip_section {
+        width: 35%;
+        margin-top: 100px;
+        /* 속성값 수정 */
+        text-align: left;
+    }
+    .trip_section>div {
+        display: block;
+    }
+    /* PC Form & Button */
+    .form_section {
+        width: 65%;
+        padding: 0;
+        margin-top: 100px;
+    }
+    .form_box fieldset {
+        gap: 60px;
+    }
+    .send_btn button {
+        padding: 14px 30px;
+        font-size: 0.85rem;
+    }
+
+} /* end of PC */

@@ -1,0 +1,300 @@
+@charset "utf-8";
+/* View 포트 단위 사용 = 1920x936 */
+body, html {
+    min-width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+/* 배경 Video */
+.video {
+    min-width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -99;
+}
+.video video {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+/* 우측상단 SNS */
+#sns {
+    position: fixed;
+    right: 40px;
+    top: 50px;
+    z-index: 100;
+}
+#sns li {
+    display: inline-block;
+}
+#sns li i {
+    font-size: 30px;
+    color: #3686af;
+    padding-left: 20px;
+    opacity: 0.5;
+    transition: all 0.5s;
+    transform: scale(1);
+}
+#sns li:hover i {
+    opacity: 1;              /* 더 진하게 */
+    transform: scale(1.2);   /* 약간 커지게 */
+}
+
+/* Headr 왼쪽 메뉴 */
+header {
+    width: 700px;
+    height: 100vh;
+    position: fixed;
+    left: -420px;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(45deg, #001a2d, #003B5C, #0077b6);
+    /* 박스 기울이기 */
+    transform: skewX(-40deg);
+}
+header h1 {
+    position: fixed;
+    left: 200px;
+    top: 40px;
+    z-index: 20;
+    /* 로고 박스 세우기 */
+    transform: skewX(40deg);
+}
+header h1 img {
+    width: 100%;
+}
+header #gnb {
+    position: fixed;
+    left: 500px;
+    top: 200px;
+    z-index: 30;
+}
+/* 1 Depth */
+header #gnb li a {
+    display: block;
+    width: 200px;
+    color: #dadada;
+    font: bold 18px/3 play, sans-serif;
+    text-align: center;
+    padding-right: 40px;
+}
+header #gnb li:hover a {
+    background: #05202d;
+    color: #fff;
+}
+header #gnb em {
+    display: inline-block;
+    transform: skewX(40deg); /* snb메뉴 세우기 */
+}
+
+/* 2 Depth */
+header #gnb li {
+    position: relative;
+}
+header #gnb .snb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* 확인후 투명도 0으로 */
+    opacity: 0;
+    transition:  all 0.5s;
+}
+header #gnb .snb a {
+    display: block;
+    width: 250px;
+    height: 40px;
+    color: #fff;
+    font: bold 16px/2.5 Arial, sans-serif;
+    border-bottom: 1px solid #89bcd5;
+    text-indent: 2em;
+    margin-bottom: 3px;
+}
+/* 2 Depth 배경색 효과 */
+header #gnb .snb li:hover>a {
+    background: #045178;
+    color: #fff;
+}
+
+/* 1 Depth Hover시 2 Depth 나오기 */
+header #gnb li:hover .snb {
+    opacity: 1;
+    left: 180px;
+}
+
+/* 이미지 텍스트 */
+.txt {
+    position: fixed;
+    right: 40px;
+    top: 200px;
+    z-index: 1;
+}
+.txt .p1 {
+    font-size: 3rem;
+    color: #002F47;
+    font-family: 'Monoton', sans-serif;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+.txt .p1 span {
+    font-size: 5rem;
+    color: #fff;
+    font-family: 'Monoton', sans-serif;
+    letter-spacing: -1px;
+}
+.txt .p1>em {
+    font-size: 50px;
+    font-family: play, sans-serif;
+    color: #bbb;
+    font-style: italic;
+}
+.txt .p2 {
+    font-size: 38px;
+    font-family: play, sans-serif;
+    color: #dadada;
+    font-style: italic;
+    letter-spacing: -2px;
+}
+.txt .p2 span {
+    font-size: 28px;
+}
+.brand_img img{
+    width: 550px;
+    opacity: 0.8;
+    margin-top: 20px;
+}
+
+
+/* 우측하단 버튼 */
+#side {
+    width: 800px;
+    height: 100vh;
+    background: #111;
+    position: fixed;
+    right: -800px;
+    top: 0;
+    opacity: 0.5;
+    transition: all 0.5s;
+    cursor: pointer;
+    transform: skewX(-40deg);
+}
+#side:hover {
+    right: -500px;
+    opacity: 0.8;
+}
+#side .inner {
+    width: 400px;
+    height: 100vh;
+    background: #000;
+    position: fixed;
+    left: 150px;
+    top: 0;
+    transition: all 1s;
+}
+#side:hover .inner {
+    left: 50px;
+}
+
+/* 이미지 버튼 */
+#side .inner p {
+    width: 300px;
+    height: 100px;
+    position: fixed;
+    left: 120px;
+    transform: translateX(200px);
+}
+#side .inner p img {
+    opacity: 0.3;
+    transition: all 0.5s;
+}
+#side .inner p img:hover {
+    opacity: 1;
+}
+/* 이미지 버튼 3개 위치 설정 */
+#side .inner p:nth-child(1) {
+    bottom: 270px;
+    transition: all 0.4s;
+}
+#side .inner p:nth-child(2) {
+    bottom: 160px;
+    transition: all 0.8s;
+}
+#side .inner p:nth-child(3) {
+    bottom: 50px;
+    transition: all 1.2s;
+}
+#side .inner p>em {
+    display: inline-block;
+    font: bold 16px/1.6 Arial, sans-serif;
+    color: #1da7af;
+    transform: skewX(40deg);
+}
+/* 이미지 버튼 3개 각각 이동 효과 */
+#side:hover .inner p {
+    transform: translateX(0px);
+}
+
+/* 애니메이션 화살표 */
+#side .arrbtn {
+    position: absolute;
+    left: 200px;
+    bottom: 40px;
+    z-index: 300;
+    transform: skewX(40deg);
+}
+#side .arrbtn i {
+    font-size: 60px;
+    color: #1da7af;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 300;
+}
+#side .arrbtn i:nth-child(1) {
+    animation: arrowAni linear 1.5s 0s infinite;
+}
+#side .arrbtn i:nth-child(2) {
+    animation: arrowAni linear 1.5s 0.5s infinite;
+}
+#side .arrbtn i:nth-child(3) {
+    animation: arrowAni linear 1.5s 1s infinite;
+}
+/* 애니메이션 키프레임 */
+@keyframes arrowAni {
+    from {
+        opacity: 1;
+        transform: scale(1);
+        right: 0;
+    }
+    to {
+        opacity: 0;
+        transform: scale(1.2);
+        right: 100px;
+    }
+}
+
+/* Video Button */
+.video_btn button {
+    position: fixed;
+    top: 50px;
+    z-index: 999;
+    cursor: pointer;
+    text-align: center;
+}
+.video_btn button i {
+    font-size: 30px !important;
+    color: #dadada;
+}
+.video_btn button:first-child {
+    right: 540px;
+}
+.video_btn button:nth-child(2) {
+    right: 480px;
+}
+.video_btn button:nth-child(3) {
+    right: 420px;
+}

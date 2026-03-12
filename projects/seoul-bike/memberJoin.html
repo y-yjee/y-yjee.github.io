@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel="apple-touch-icon=precomposed" href="./images/logo.png">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/display_none_scrollbar.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./css/bike.css">
+    <link rel="stylesheet" href="./css/memberjoin.css">
+    <!-- JS 플러그인 파일 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 페이지 관련 JS -->
+    <script src="./js/bike.js"></script>
+    <script>
+        $(function(){
+            // header 페이지 추가
+            $('header').load('./includes/header.html');
+            // footer 페이지 추가
+            $('footer').load('./includes/footer.html');
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <hr class="line">
+        <!-- Main -->
+        <main>
+            <div class="main_header">
+                <h1>회원가입</h1>
+            </div>
+
+            <div class="main_middle">
+                <div class="contents">
+                    <h2>[회원가입안내]</h2>
+                    <ul>
+                        <li>
+                            서울자전거 따릉이는 만14세 이상(일반회원),만 13세로 구분하여 회원가입이 가능합니다.
+                        </li>
+                        <li>
+                            <b>만 13세는 보호자(부모,법정대리인)</b> 본인인증을 통해서 회원가입이 가능하므로, <span>반드시 보호자 핸드폰에서 진행</span>하여 주시기 바랍니다.
+                        </li>
+                        <li>
+                            위의 사항에 동의 할 경우에만 아래의 가입하기 버튼을 눌러 진행하여 주기 바랍니다.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main_button">
+                <ul>
+                    <li>
+                        <button>
+                            <h3>
+                            만 13세 <br>
+                            회원가입하기
+                            </h3>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <h3>
+                            만 14세 이상 <br>
+                            회원가입하기
+                            </h3>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <!-- Main -->
+        <!-- Footer -->
+        <footer></footer>
+        <!-- /Footer -->
+    </div>
+</body>
+</html>

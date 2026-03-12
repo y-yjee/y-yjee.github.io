@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel="apple-touch-icon=precomposed" href="./images/logo.png">
+    <!-- 기본 Reset CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/display_none_scrollbar.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <!-- 페이지 관련 CSS -->
+    <link rel="stylesheet" href="./css/bike.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <!-- JS 플러그인 파일 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 페이지 관련 JS -->
+    <script src="./js/bike.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('body').append('<div class="alert"><img src="./images/alert.png" alt="준비중 알람창"></div>')
+            $('button[type="button"], input[type="submit"]').click(function(e){
+                e.preventDefault();
+                $('.alert').stop().fadeIn(800); // alert 표시
+                setTimeout(function(){
+                    $('.alert').stop().fadeOut(800);
+                },3000);
+            })
+        })
+        $(function(){
+            // footer 페이지 추가
+            $('footer').load('./includes/footer.html');
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+ 
+        <!-- Main -->
+        <main>
+            <div class="w320">
+                <form action="#" class="login_container">
+                    <fieldset>
+                        <div class="main_header">
+                            <a href="./index.html"><img src="./images/mainlogo.png" alt="따릉이"></a>
+                        </div> 
+                    </fieldset>
+                    <ul>
+                        <li>
+                            <input type="text" id="id" placeholder="아이디" required>
+                        </li>
+                        <li>
+                            <input type="password" id="password" placeholder="비밀번호" required>
+                        </li>
+                    </ul>
+                    <div class="login_remember">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">로그인 상태 유지</label>
+                    </div>              
+                    <input type="submit" value="로그인">
+                </form>
+
+                <section>
+                    <div>
+                        <ul class="login_join">
+                            <li>
+                                <a href="./memberJoin.html">회원가입</a>
+                            </li>
+                            <li>
+                                <a href="#">아이디 찾기</a>
+                            </li>
+                            <li>
+                                <a href="#">비밀번호 찾기</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="login_sns">
+                            <div><img src="./images/ticket/join_line.jpg" alt="sns"></div>
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="./images/ticket/login_kakao.png" alt="kakao"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="./images/ticket/login_naver.png" alt="naver"></a>
+                                </li>
+                            </ul>
+                            <button type="button">비회원 로그인</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <!-- Main -->
+        
+        <!-- Footer -->
+        <footer></footer>
+        <!-- /Footer -->
+    </div>
+</body>
+</html>

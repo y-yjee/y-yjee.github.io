@@ -1,0 +1,296 @@
+@charset "utf-8";
+/* About Me */
+.about {
+    padding: 80px 0;
+}
+/* Title & Intro Text */
+.about__title {
+    font-family: 'GmarketSansMedium';
+    font-size: 2.5rem;
+    color: #f1f2f5;
+    text-align: center;
+    margin-bottom: 12px;
+}
+/* Title underline */
+.about__title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 40px auto 0;
+}
+.about__text {
+    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 15px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.about__break {
+    display: inline;
+}
+.about__commit {
+    background: rgba(185, 185, 185, 0.15);
+    color: #bd5555; 
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em; 
+}
+
+
+/* Image */
+.about__image {
+    display: flex;
+    justify-content: center;
+}
+.about__image img {
+    width: 300px;
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+.about__image img.active {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 8px rgba(245, 245, 245, 0.2));
+}
+/* Active state */
+.about.is-active .about__image img {
+    content: url("../images/mimoticon2.png");
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 8px rgba(245, 245, 245, 0.2));
+}
+/* Hashtags */
+.about__hashtags {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(4, max-content); 
+    justify-content: center;
+    row-gap: 10px;   
+    column-gap: 25px;
+}
+.about__hashtag {
+    font-size: 1.05rem;
+    font-weight: 500;     
+    letter-spacing: -0.01em;
+    color: rgba(255,255,255,0.75);
+    position: relative;
+    padding-left: 20px;
+}
+.about__hashtag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background: #F4D35E;
+    border-radius: 50%;
+    transform: translateY(-50%);
+
+    animation: glowPulse 2.5s ease-in-out infinite;
+}
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 6px rgba(244, 211, 94, 0.6),
+            0 0 12px rgba(244, 211, 94, 0.3);
+    }
+    50% {
+        box-shadow:
+            0 0 10px rgba(244, 211, 94, 0.9),
+            0 0 18px rgba(244, 211, 94, 0.6);
+    }
+}
+/* Toggle Button */
+.about__toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+/* Global rounded button (reusable component) */
+.round-btn {
+    gap: 6px;
+    padding: 8px 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+
+    color: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50px;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.round-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+.round-btn img {
+    width: 14px;  
+    height: auto;
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.round-btn.active img {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* FAQ Section */
+.about__faq {
+    max-width: 780px;   
+    margin: 0 auto;   
+    display: grid;
+    gap: 10px;
+}
+.about__faq-item {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.05),
+        rgba(255,255,255,0.03)
+    );
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden; 
+}
+/* FAQ Question */
+.about__faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.about__faq-question:hover {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.07),
+        rgba(255,255,255,0.04)
+    );
+    border-color: rgba(255,255,255,0.15);
+}
+.about__faq-question h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    transition: color 0.3s ease;
+}
+/* Active state */
+.about__faq-item.is-open .about__faq-question h3 {
+    color: #e1cc78;
+    animation: textGlowPulse 2.5s ease-in-out infinite;
+}
+@keyframes textGlowPulse {
+    0%, 100% {
+        text-shadow:
+            0 0 4px rgba(244, 211, 94, 0.4),
+            0 0 8px rgba(244, 211, 94, 0.25);
+    }
+    50% {
+        text-shadow:
+            0 0 6px rgba(244, 211, 94, 0.8),
+            0 0 14px rgba(244, 211, 94, 0.6);
+    }
+}
+/* FAQ Arrow */
+.about__faq-arrow {
+    width: 14px;  
+    height: auto;
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.about__faq-item.is-open .about__faq-arrow {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+/* FAQ Answer */
+.about__faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition:
+        grid-template-rows 0.35s ease,
+        padding 0.25s ease;
+        
+    background: rgba(0,0,0,0.25);
+    padding: 0 24px;
+
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.75);
+}
+.about__faq-answer > p {
+    overflow: hidden;
+}
+/* When open */
+.about__faq-item.is-open .about__faq-answer {
+    grid-template-rows: 1fr;
+    padding: 20px 24px;
+}
+
+
+/* Mobile About Layout */
+@media (max-width: 768px) {
+    .about__card {
+        padding-top: 40px;  
+        padding-bottom: 40px;
+    }
+    .about__title {
+        font-size: 1.8rem;
+    }
+    .about__title::after {
+        width: 40px;
+        margin: 30px auto 0;
+    }
+    .about__text {
+        font-size: 0.85rem;
+    }
+    .about__break {
+        display: block;
+        margin-top: 4px; 
+    }
+    .about__commit {
+        display: inline-block;
+        margin-top: 2px;
+    }
+    .about__image img {
+        width: 200px;
+    }
+    .about__hashtags {
+        grid-template-columns: repeat(2, max-content);
+        gap: 10px;
+    }
+    .about__hashtag {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    .about__toggle {
+        margin-bottom: 30px;
+    }
+    .round-btn {
+        font-size: 0.8rem;
+        padding: 7px 16px;
+    }
+    .round-btn img {
+        width: 12px;
+    }
+    .about__faq-question {
+        padding: 28px 20px;
+    }
+    .about__faq-question h3 {
+        font-size: 1.05rem;
+    }
+    .about__faq-answer {
+        font-size: 0.85rem;
+    }
+}
